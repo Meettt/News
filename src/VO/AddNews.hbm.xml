@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+ <class name="VO.AddNewsVO" table="AddNews">
+ 	<id name="addNewsId"  column="addNewsId" >
+ 		<generator class="native"></generator>
+ 	</id>
+ 
+ <property name="headLine">
+ <column name="headLine"></column>
+ </property>
+  
+ <property name="newsDate" type="date">
+ <column name="newsDate"></column>
+ </property>
+ 
+ 
+ 
+  <property name="topNews">
+ <column name="topNews"></column>
+ </property>
+ 
+  <property name="latestNews">
+ <column name="latestNews"></column>
+ </property>
+ 
+
+ <many-to-one name="AreaVO" class="VO.AreaVO" column="areaId"></many-to-one>
+ <many-to-one name="CityVO" class="VO.CityVO" column="cityId"></many-to-one>
+ <many-to-one name="StateVO" class="VO.StateVO" column="stateId"></many-to-one>
+<many-to-one name="CountryVO" class="VO.CountryVO" column="countryId"></many-to-one>
+<many-to-one name="CategoryVO" class="VO.CategoryVO" column="categoryId"></many-to-one>
+<many-to-one name="Sub_categoryVO" class="VO.Sub_categoryVO" column="sub_categoryId"></many-to-one>
+<many-to-one name="ReporterRegistrationVO" class="VO.ReporterRegistrationVO" column="reporterId"></many-to-one>
+<one-to-one name="addNewsDescriptionVO" class="VO.AddNewsDescriptionVO" cascade="save-update"></one-to-one>
+ 
+</class>
+
+
+</hibernate-mapping>
