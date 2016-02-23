@@ -1,0 +1,128 @@
+@CHARSET "UTF-8";
+
+.inner-pages h2 .txt-left {
+	background: #ffffff;
+}
+
+h1 {
+	font-size: 48px !important;
+}
+
+h3 {
+	font-size: 16px !important;
+}
+
+h5 {
+	font-size: 20px !important;
+}
+
+body {
+	font-size: 14px !important;
+}
+
+.classes-page .skill-inner .label, body, .comments-list li .text p,
+	.header-4-address strong.info, .header-4-address a.email, strong.copy,
+	.widget-box-inner p, .blog-post-box .text p, .box-1 p, .box-1 .textwidget,
+	.get-touch-form input, .get-touch-form strong.title, .footer-copyright strong.copy,
+	#inner-banner p, .welcome-text-box p, .about-me-text p, .about-me-text blockquote q,
+	.team-box .text p, .accordition-box .accordion-inner p,
+	.facts-content-box p, .our-detail-box p, .our-detail-box ul li,
+	.widget_em_widget ul li, .sidebar-recent-post ul li p, blockquote p,
+	blockquote q, .author-box .text p, .contact-page address ul li strong.title,
+	.contact-page address ul li strong.ph, .contact-page address ul li strong.mob,
+	.contact-page address ul li a.email, a.comment-reply-link,
+	.timeline-project-box>.text p, .comments .text p, .event-row .text p,
+	.project-detail p, .news-box .text p, .error-page p, .cp-columns p,
+	.cp-list-style ul li, .customization-options ul li, .cp-accordion .accordion-inner strong,
+	.list-box ul li, .list-box2 ul li, .list-box3 ul li, .tab-content p,
+	.tab-content-area p, .blockquote-1 q, .blockquote-2 q, .map h3,
+	.even-box .caption p, .header-4-address strong.info, .header-4-address a.email,
+	strong.copy, .widget-box-inner p {
+	font-family: "Roboto";
+}
+
+h1, h2, h3, h4, h5, h6, .head-topbar .left ul li strong.number,
+	.head-topbar .left ul li a, .navigation-area a.btn-donate-2,
+	.footer-menu li a, .footer-menu2 li a, #nav-2 li a, #nav-2 li ul li a,
+	.navigation-area a.btn-donate3, .top-search-input, a.btn-donate5,
+	.navigation-area a.btn-donate, .top-search-input, #nav li a, #nav li ul li a,
+	.cp-banner .caption h1, .cp-banner .caption h2, .cp-banner .caption strong.title,
+	.cp-banner .caption a.view, .widget-box-inner h2, .entry-header>h1,
+	.h-style, .latest-news-box h3, .css3accordion .content .top a,
+	.css3accordion .content .top strong.mnt, .css3accordion .content .top a.comment,
+	.css3accordion .content strong.title, .css3accordion .content p,
+	.css3accordion .content a.readmore, .upcoming-heading h3, .upcoming-box .caption strong.title,
+	.upcoming-box .caption strong.mnt, .upcoming-events-box a.btn-view,
+	.countdown_holding span, .countdown_amount, .countdown_period,
+	.our-project a.btn-view, .our-project h3, .portfolio-filter li a,
+	.gallery-box .caption strong.title, .timeline-box h3, .timeline-head strong.mnt,
+	.timeline-frame-outer .caption h4, .timeline-frame-outer .caption p,
+	.blog-post h3, .blog-post-box .caption strong.date, .blog-post-box .caption strong.comment,
+	.blog-post-box .text strong.title, .blog-post-box .text h4,
+	.blog-post-box .text a.readmore, .blog-post-share strong.title1,
+	.name-box strong.name, .name-box-inner strong, .text-row strong.title,
+	.text-row strong.time, .twitter-info-box ul li strong.number,
+	.twitter-info-box ul li a.tweet, .box-1 h4, .box-1 a.btn-readmore,
+	.box-1 .text strong.title, .box-1 .text strong.mnt, #inner-banner h1,
+	.welcome-text-box h2, .about-me-left .text ul li h3, .about-me-left .text ul li strong.title,
+	.about-me-socila strong.title, .about-me-text h3, .team-member-box h3,
+	.team-box .text h4, .team-box .text h4 a, .team-box .text strong.title,
+	.heading h3, .our-facts-box strong.number, .our-facts-box a.detail,
+	.our-detail-box h4, .accordition-box .accordion-heading .accordion-toggle strong,
+	.facts-tab-box .nav-tabs>li>a, .nav-pills>li>a, .blog-box-1 strong.title,
+	.bottom-row .left span, .bottom-row .left a, .bottom-row .left ul li a,
+	.bottom-row .right strong.title, .blog-box-1 .text h2, .blog-box-1 .text a.readmore,
+	.pagination-all.pagination ul>li>a, .pagination ul>li>span,
+	.sidebar-input, .sidebar-member a.member-text, .sidebar-recent-post h3,
+	.sidebar-recent-post ul li:hover .text strong.title, .widget_em_widget ul li a,
+	.sidebar-recent-post ul li .text strong.title, .sidebar-recent-post ul li a.mnt,
+	.sidebar-recent-post ul li a.readmore, .list-area ul li a, .archive-box ul li a,
+	.tagcloud a, .share-socila strong.title, .author-box .text strong.title,
+	.contact-me-row strong.title, .blog-detail-form h3, .form-area label,
+	.detail-input, .detail-textarea, .detail-btn-sumbit,
+	.post-password-form input[type="submit"], #searchsubmit,
+	.detail-btn-sumbit2, a.comment-reply-link, .donate-page h2,
+	.donate-form ul li a, .donate-form-area ul li label, .donate-input,
+	.donate-btn-submit, .timeline-project-box .holder .heading-area,
+	.timeline-project-box .blog-box-1>.text h2, .comment-box h3, .comments .text strong.title,
+	.comments .text a.date, .comments .text a.reply, .timer-area ul li a,
+	.event-detail-timer .countdown-amount, .countdown-period,
+	.contact-me-row2 strong.title, .contact-me-row2 ul li a,
+	.related-event-box h3, .related-box .text strong.title, .related-box .text a.date,
+	.member-input, .member-input-2, .member-input-3, .member-form label,
+	.check-box strong.title, .member-btn-submit, .event-heading a,
+	.event-row .text h2, .detail-row li a, .map-row a.location,
+	.project-detail h2, .project-detail-list li .even, .project-detail-list li .odd,
+	.other-project h3, .news-box .text-top-row span, .news-box .text-top-row a,
+	.news-box .text-top-row a, .news-box .text h2, .news-box .text a.readmore,
+	.slide-out-div h3, .error-page h2, .cp-columns h2, .cp-columns strong.title,
+	.customization-options h2, .cp-highlighter h2, .cp-accordion .accordion-heading .accordion-toggle strong,
+	.cp-testimonials h2, .frame-box strong.name, .frame-box strong.title,
+	.testimonial-box-1 blockquote q, .single-testimonial blockquote q,
+	.frame-box2 strong.name, .frame-box2 strong.title, .button-box a,
+	.typography h1, h2.cp-heading-full, .typography h2, h3.cp-heading-full,
+	.typography h3, h4.cp-heading-full, .typography h4, h5.cp-heading-full,
+	.typography h5, h6.cp-heading-full, .typography h6, .tabs-box .nav-tabs>li>a,
+	.nav-pills>li>a, #wp-calendar caption, .even-box .caption h2,
+	.timeline-round strong.year, #search-text input[type="text"],
+	.sidebar-recent-post select, .content_section .review-final-score h3,
+	.content_section .review-final-score h4, #cp_header7 .navigation-row .navbar-default li a,
+	.thumb-style .caption h2, .thumb-style .caption strong, .services-box .cp_strong,
+	.food-title h2, .food-title strong, .cp_special-menu .text h2,
+	.cp_special-menu .btn-light, .cp_our-menu .nav-tabs>li>a, .food-title h2,
+	.chef-info .text strong.title, .event-carousel-holder .event-info .cp_strong,
+	.event-carousel-holder .countdown-amount, .our-facts-box strong,
+	.cp_blog-section .blog-list .cp_strong, .cp_blog-section .more-info,
+	.cp-few-words .cp-heading-full, .footer-top h2 {
+	font-family: "Roboto";
+}
+
+#mega_main_menu.main-menu>.menu_holder>.menu_inner>.nav_logo>.mobile_toggle>.mobile_button,
+	#mega_main_menu.main-menu>.menu_holder>.menu_inner>ul>li>.item_link,
+	#mega_main_menu.main-menu>.menu_holder>.menu_inner>ul>li>.item_link .link_text,
+	#mega_main_menu.main-menu>.menu_holder>.menu_inner>ul>li.nav_search_box *,
+	#mega_main_menu.main-menu>.menu_holder>.menu_inner>ul>li .post_details>.post_title,
+	#mega_main_menu.main-menu>.menu_holder>.menu_inner>ul>li .post_details>.post_title>.item_link,
+	.navigation ul {
+	font-family: "Roboto !important";
+}
