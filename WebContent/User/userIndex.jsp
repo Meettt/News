@@ -322,7 +322,7 @@ function likeall(addNewsId) {
 
 	
 }
-var global=0
+
 function searchUserForLike(addNewsId) {
 	var ajaxRequest = new XMLHttpRequest();
 	ajaxRequest.onreadystatechange = function(){
