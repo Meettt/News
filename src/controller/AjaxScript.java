@@ -47,14 +47,11 @@ public class AjaxScript extends HttpServlet {
 		// TODO Auto-generated method stub
 		PrintWriter out= response.getWriter();
 		String string = request.getParameter("string");
-		System.out.println("ssss");
 		
 		
 		
 		if(string.equals("state")){
-			System.out.println("state");
 		int countryId = Integer.parseInt( request.getParameter("countryId"));
-		System.out.println("state");
 		CountryVO countryVO = new CountryVO();
 		countryVO.setCountryId(countryId);
 		StateVO stateVO = new StateVO();
@@ -65,19 +62,12 @@ public class AjaxScript extends HttpServlet {
 		for(StateVO stateVObean : statels){
 			jsonArray.add(stateVO.getStateId(),stateVObean.getJsonObject());
 		}
-		 System.out.println(jsonArray);
 		out.println(jsonArray);
 	}
 		
 		
 		
 		if(string.equals("city")){
-			System.out.println("city");
-			Enumeration<String>params =  request.getParameterNames();
-			while(params.hasMoreElements()){
-				System.out.println("param--->"+params.nextElement());
-			}
-			System.out.println("--->"+request.getParameterValues("stateId")[0]);
 			int stateId = Integer.parseInt( request.getParameter("stateId"));
 			StateVO  stateVO = new StateVO();
 			stateVO.setStateId(stateId);
@@ -125,20 +115,29 @@ public class AjaxScript extends HttpServlet {
 		}
 		if(string.equals("likeAll")){
 			Integer addNewsId = Integer.parseInt(request.getParameter("addNewsId"));
-			System.out.println("for------------>"+addNewsId);
+			Integer userId = Integer.parseInt(request.getParameter("userId"));
 			AddNewsVO addNewsVO = new AddNewsVO();
 			addNewsVO.setAddNewsId(addNewsId);
 			LikeVO likeVO = new LikeVO();
 			likeVO.setAddNewsVO(addNewsVO);
 			LikeDAO likeDAO = new LikeDAO();
-			List alllike=likeDAO.AllLike(likeVO);
+			List<LikeVO> alllike=likeDAO.AllLike(likeVO);
 			if(alllike.isEmpty()){
+				out.print("Like ");
 				out.print("0");
 			}
 			else{
-			likeVO =(LikeVO)alllike.get(0);
-			System.out.println("Counteri---------->"+likeVO.getLikeCounter());
-			out.print(likeVO.getLikeCounter());
+				int like =0;
+				for(LikeVO likeVO2 : alllike){
+					
+					if(likeVO2.getUserVO().getUserId()==userId)
+						like=1;	
+				}
+				if(like==1)out.print("DisLike ");
+				else out.print("Like ");
+					
+				likeVO =(LikeVO)alllike.get(0);
+				out.print(likeVO.getLikeCounter());
 			}	}
 		
 		if(string.equals("userLike")){

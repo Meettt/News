@@ -71,6 +71,7 @@ public class LikeDAO {
 		transaction.commit();
 		return ls;
 	}
+	
 	public List searchUserforLike(LikeVO vo) {
 		List ls = null;
 		Transaction transaction = session.beginTransaction();

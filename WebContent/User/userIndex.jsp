@@ -139,26 +139,13 @@ var wc_add_to_cart_params = {"ajax_url":"\/demo\/material_mag\/wp-admin\/admin-a
 <script type='text/javascript' src='js/add-to-cart.min.js?ver=2.4.7'></script>
 <script type='text/javascript'
 	src='js/woocommerce-add-to-cart.js?ver=4.7.3'></script>
-<script type='text/javascript'>
-/* <![CDATA[ */
-var object_name = {"templateUrl":"http:\/\/crunchpress.com\/demo\/material_mag\/wp-content\/themes\/material_mag\/frontend\/images"};
-/* ]]> */
-</script>
-<script type='text/javascript'
-	src='http://crunchpress.com/demo/material_mag/wp-content/themes/material_mag/frontend/images?ver=4.3.1'></script>
 <!--[if lt IE 9]>
 <script type='text/javascript' src='js/html5shive.js?ver=1.5.1'></script>
 <![endif]-->
-<link rel="EditURI" type="application/rsd+xml" title="RSD"
-	href="http://crunchpress.com/demo/material_mag/xmlrpc.php?rsd" />
-<link rel="wlwmanifest" type="application/wlwmanifest+xml"
-	href="http://crunchpress.com/demo/material_mag/wp-includes/wlwmanifest.xml" />
 <meta name="generator" content="WordPress 4.3.1" />
 <meta name="generator" content="WooCommerce 2.4.7" />
-<link rel='canonical' href='http://crunchpress.com/demo/material_mag/' />
-<link rel='shortlink' href='http://crunchpress.com/demo/material_mag/' />
 <script type="text/javascript">
-		var ajaxurl = 'http://crunchpress.com/demo/material_mag/wp-admin/admin-ajax.php';
+		var ajaxurl = '/admin-ajax.php';
 		</script>
 <script type="text/javascript">
 			jQuery(document).ready(function() {
@@ -184,7 +171,7 @@ var object_name = {"templateUrl":"http:\/\/crunchpress.com\/demo\/material_mag\/
 					// SYNC AJAX REQUEST
 					jQuery.ajax({
 						type:"post",
-						url:"http://crunchpress.com/demo/material_mag/wp-admin/admin-ajax.php",
+						url:"/admin-ajax.php",
 						dataType: 'json',
 						data:data,
 						async:false,
@@ -221,16 +208,9 @@ var object_name = {"templateUrl":"http:\/\/crunchpress.com\/demo\/material_mag\/
 				},30);
 			});
 		</script>
-<script type='text/javascript'>
-/* <![CDATA[ */
-var taqyeem = {"ajaxurl":"http://crunchpress.com/demo/material_mag/wp-admin/admin-ajax.php" , "your_rating":"Your Rating:"};
-/* ]]> */
-</script>
+
 <style type="text/css" media="screen"></style>
-<script type="text/JavaScript">
-		var ajaxurl = 'http://crunchpress.com/demo/material_mag/wp-admin/admin-ajax.php';
-		var directory_url = 'http://crunchpress.com/demo/material_mag/wp-content/themes/material_mag';
-		</script>
+
 <!-- HomeIndex2  -->
 <link type="text/css" href="css/homeIndex2.css"  id="stylesheet" rel='stylesheet'>
 <!-- HomeIndex3  -->
@@ -308,16 +288,19 @@ function likeButtonCall(addNewsId,userId) {
 	}
 	
 }
-function likeall(addNewsId) {
+function likeall(addNewsId,userId) {
+	var likebutton = document.getElementById("likebutton["+addNewsId+"]");
 	var ajaxRequest = new XMLHttpRequest();
 	ajaxRequest.onreadystatechange = function(){
 		if(ajaxRequest.readyState==4){
 			var likeValue = document.getElementById("likeValue["+addNewsId+"]");
-			likeValue.innerHTML=ajaxRequest.responseText;
-						
+			var string =ajaxRequest.responseText.split(" ", 10);
+			if(string[0]==null){string[0]="Like";}
+			likebutton.innerHTML=string[0];
+			likeValue.innerHTML=string[1];
 		}
 	}
-	ajaxRequest.open("GET","${pageContext.request.contextPath}/AjaxScript?string=likeAll&addNewsId="+addNewsId,true);
+	ajaxRequest.open("GET","${pageContext.request.contextPath}/AjaxScript?string=likeAll&addNewsId="+addNewsId+"&userId="+userId,true);
 	ajaxRequest.send();
 
 	
@@ -368,7 +351,7 @@ function searchUserForLike(addNewsId) {
 			}
 						
 		}
-		return null;
+		return document.getElementById("likeDiv");
 	}
 	ajaxRequest.open("GET","${pageContext.request.contextPath}/AjaxScript?string=userLike&addNewsId="+addNewsId,true);
 	ajaxRequest.send();
@@ -377,8 +360,29 @@ function searchUserForLike(addNewsId) {
 }
 
 function onclickA(addNewsId){
+	debugger;
 	var s= document.getElementById("s");
-	s.innerHTML="<div id='signin' class='modal signin fade' tabindex='-1' role='dialog' aria-labelledby='signin' aria-hidden='true'><div class='modal-dialog modal-sm'><div class='modal-content'><div class='modal-header'><button type='button' class='close' data-dismiss='modal'aria-hidden='true'>&#42;</button><h3>Like News</h3></div><div class='small-post' id='Like-Scroll'><div class='modal-body' id='likeDiv'><div class='Like-User'><a href='' ><img src='img/18-80x80.jpg' class='attachment-80x80 wp-post-image' alt='18' /></a><h3 class='border_none' id='Like-name' ><a id='userName' href='' > Patel</a></h3></div></div></div><div class='modal-footer'></div></div></div></div>"+searchUserForLike(addNewsId);
+	s.innerHTML="<div id='signin' class='modal signin fade' tabindex='-1' role='dialog' aria-labelledby='signin' aria-hidden='true'>"
+					+"<div class='modal-dialog modal-sm'>"
+						+"<div class='modal-content'>"
+						+"<div class='modal-header'>"
+							+"<button type='button' class='close' data-dismiss='modal'aria-hidden='true'>&#42;</button>"
+							+"<h3>Like News</h3>"
+						+"</div>"
+						+"<div class='small-post' id='Like-Scroll'>"
+							+"<div class='modal-body' id='likeDiv'>"
+								+"<div class='Like-User'>"
+									+"<a href='' ><img src='img/18-80x80.jpg' class='attachment-80x80 wp-post-image' alt='18' /></a>"
+									+"<h3 class='border_none' id='Like-name' ><a id='userName' href='' > Patel</a></h3>"
+								+"</div>"
+							+"</div>"
+						+"</div>"
+					+"<div class='modal-footer'>"
+					+"</div>"
+				+"</div>"
+			+"</div>"
+		+"</div>";
+		searchUserForLike(addNewsId);
 }
 
 
@@ -400,14 +404,55 @@ border-radius: 2px;
 box-shadow: 0 0 4px rgba(0, 0, 0, .20);
 }
 
+#sharePop{
+display: none;
+	
+}
+
 </style>
 
 
+<script type="text/javascript">
+function sharePopup(addNewsId){
+	var sharePop = document.getElementById("sharePop");
+	/*sharePop.style.diplay="block"; */
+	var shareNewsLink = document.getElementById("shareNewsLink");
+	shareNewsLink.innerHTML="http://localhost:8080/News/UserPageNews?string=specific&addNewsId="+addNewsId;
+	var shareNewsHyperLink = document.getElementById("shareNewsHyperLink");
+	shareNewsHyperLink.setAttribute("href", "http://localhost:8080/News/UserPageNews?string=specific&addNewsId="+addNewsId);
+	
+}
+
+</script>
+<script src="js/clipboard.min.js"></script>
 </head>
 <body id="home"
 	class="home page page-id-46 page-template-default mmm mega_main_menu-2-0-3 cp_full_width    wpb-js-composer js-comp-ver-4.7.3 vc_responsive">
 
+
 	<div id="wrapper" class="wrapper">
+	
+		
+		<!-- <div id="sharePop" class="modal signin fade" role="dialog" aria-labelledby="signin" aria-hidden="true" style="margin: 0px !important; width: 400px;">
+			<div class="modal-dialog modal-sm" style="margin: 0px !important;">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"
+							aria-hidden="true">&#42;</button>
+						<h3>Share News</h3>
+					</div>
+					<div class="modal-body" id="likeDiv">
+						<div>
+							<a href=""> <img src="img/18-80x80.jpg"
+								class="attachment-80x80 wp-post-image" alt="18" /></a>
+							<h3 class="border_none" id="Like-name">
+								<a id="userName" href=""> Patel</a>
+							</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> -->
 
 		<div id="signup" class="modal fade signup" tabindex="-1" role="dialog"
 			aria-labelledby="signup" aria-hidden="true">
@@ -428,8 +473,10 @@ box-shadow: 0 0 4px rgba(0, 0, 0, .20);
 
 
 	<div id="s"></div>
-		<!-- <div id="signin" class="modal signin fade" tabindex="-1" role="dialog"
-			aria-labelledby="signin" aria-hidden="true">
+	
+	
+		<div id="sharePop" class="modal sharePop fade" tabindex="-1" role="dialog"
+			 aria-hidden="true">
 			<div class="modal-dialog modal-sm">
 					 <div class="modal-content">
 					 
@@ -437,43 +484,43 @@ box-shadow: 0 0 4px rgba(0, 0, 0, .20);
 						<div class="modal-header">
 							<button type="button" class="close" data-dismiss="modal"
 								aria-hidden="true">&#42;</button>
-							<h3>Like News</h3>
+							<h3>Share News</h3>
 						</div>
+							<div class="modal-body" id="likeDiv">
+						<a id="shareNewsHyperLink"><span id="shareNewsLink" ></span></a>
 						
-				
-						
-						<div class="small-post" id="Like-Scroll">
-						<div class="modal-body" id="likeDiv">
-												
-													<div class="Like-User">
-														<a href="" >
-														
-														<img
-															src="img/18-80x80.jpg"
-															class="attachment-80x80 wp-post-image" alt="18" /></a>
-														<h3 class="border_none" id="Like-name" >
-															<a id="userName" href=""  > Patel</a>
-															
-														</h3>
-														<p ></p>
-													</div>
-												</div>
-											
 						</div>
-						
-						<script type="text/javascript" id="s">
-						searchUserForLike();
-						</script>
 						<div class="modal-footer">
-							
-						</div>
+						<button id="copy-button" class="btn btn-submit" style="background-color: #32aae1; color: white;" onclick="copy_clip(shareNewsLink.innerHTML)">Copy</button>
+					
+					
+				<script  type="text/javascript">
+				var copyBtn = document.querySelector('#copy-button');
+				copyBtn.addEventListener('click', function () {
+				  var urlField = document.querySelector('#shareNewsLink');
+				   
+				  // create a Range object
+				  var range = document.createRange();  
+				  // set the Node to select the "range"
+				  range.selectNode(urlField);
+				  // add the Range to the set of window selections
+				  window.getSelection().addRange(range);
+				   
+				  // execute 'copy', can't 'cut' in this case
+				  document.execCommand('copy');
+				}, false);
+
+</script>
+					
+					
+					</div>
 					</div>
 				
 				
 				
 				
 			</div>
-		</div> -->
+		</div> 
 
 <!-- Header Page -->
 		<jsp:include page="header.jsp"></jsp:include>
@@ -490,7 +537,7 @@ box-shadow: 0 0 4px rgba(0, 0, 0, .20);
 
 				<m:forEach items="${sessionScope.topls }" var="top" varStatus="j">
 
-					<script >likeall(${top.addNewsId});</script>
+					
 					<m:set value="${top.addNewsId}" var="addNewsId" scope="session"></m:set>
 					<div class="item">
 						<div class="cp-post-content">
@@ -498,7 +545,7 @@ box-shadow: 0 0 4px rgba(0, 0, 0, .20);
 								<a href="p=16.jsp" class="btn ripple-effect btn-gray manimate">Featured</a>
 							</div>
 							<h1>
-								<a href="p=16.jsp">${top.headLine}</a>
+								<a href="<%=request.getContextPath()%>/UserPageNews?string=specific&addNewsId=${i.addNewsId }">${top.headLine}</a>
 							</h1>
 							<ul class="cp-post-tools">
 								<li>
@@ -513,7 +560,7 @@ box-shadow: 0 0 4px rgba(0, 0, 0, .20);
 									
 									<li>
 										<i class="icon-3"></i> 
-										<a class="" href="http://crunchpress.com/demo/material_mag/?cat=44" title="Featured">Featured</a>
+										<a id="anchor" class="ripple-effect" href="#sharePop" data-toggle="modal" onclick="sharePopup(${top.addNewsId})">Share</a>
 									</li>
 									
 									<li><i class="icon-4"></i> <a
@@ -527,6 +574,7 @@ box-shadow: 0 0 4px rgba(0, 0, 0, .20);
 								class="attachment-1600x900 wp-post-image" alt="7" />
 						</div>
 					</div>
+					<script >likeall(${top.addNewsId},${param.userId});</script>
 </m:forEach>
 
 
@@ -613,7 +661,7 @@ box-shadow: 0 0 4px rgba(0, 0, 0, .20);
 																<m:forEach items="${i.value }" var="j" varStatus="forcount">
 															
 															<m:if test="${forcount.count lt 3 }">
-															<script>likeall(${j.addNewsId});</script>
+															
 																<li class="col-md-6" id="li">
 																
 																
@@ -636,7 +684,7 @@ box-shadow: 0 0 4px rgba(0, 0, 0, .20);
 																			
 																			<h3>
 																				<a
-																					href="specificNews.jsp?addNewsId=${j.addNewsId }">
+																					href="<%=request.getContextPath()%>/UserPageNews?string=specific&addNewsId=${j.addNewsId }">
 																					${j.headLine} </a>
 																			</h3>
 																			<ul class="cp-post-tools">
@@ -647,6 +695,10 @@ box-shadow: 0 0 4px rgba(0, 0, 0, .20);
 																					<a class="ripple-effect" data-target=".signin" data-toggle="modal"><span id="likeValue[${j.addNewsId}]" style="color: white;cursor: pointer;"><m:set value="${j.addNewsId}" var="addNewsId"></m:set></span></a>
 																					<button  class="likebutton" id="likebutton[${j.addNewsId}]" onclick="likeButtonCall(${j.addNewsId},${param.userId})" >Like</button>
 																				</li>
+																				<li>
+																					<i class="icon-3"></i> 
+																					<a id="anchor" class="ripple-effect" href="#sharePop" data-toggle="modal" onclick="sharePopup(${j.addNewsId})">Share</a>
+																				</li>
 																				<li><i class="icon-4"></i> <a
 																					href="http://crunchpress.com/demo/material_mag/?p=421#comments">
 																						1 Comment</a></li>
@@ -655,6 +707,7 @@ box-shadow: 0 0 4px rgba(0, 0, 0, .20);
 																	</div>
 																	
 																</li>
+																<script>likeall(${j.addNewsId},${param.userId});</script>
 															</m:if>	
 															</m:forEach>
 																</ul>
