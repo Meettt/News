@@ -6,6 +6,14 @@ public class AdminVO {
 	private String adminEmail;
 	private String adminPwd;
 	private String adminUserName;
+	private LoginVO loginVO;
+	
+	public LoginVO getLoginVO() {
+		return loginVO;
+	}
+	public void setLoginVO(LoginVO loginVO) {
+		this.loginVO = loginVO;
+	}
 	public int getAdminId() {
 		return adminId;
 	}

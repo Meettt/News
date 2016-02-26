@@ -2,8 +2,6 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Enumeration;
-import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -15,10 +13,12 @@ import javax.servlet.http.HttpServletResponse;
 import org.json.simple.JSONArray;
 
 import ADO.CityDAO;
+import ADO.CommentDAO;
 import ADO.LikeDAO;
 import ADO.StateDAO;
 import VO.AddNewsVO;
 import VO.CityVO;
+import VO.CommentVO;
 import VO.CountryVO;
 import VO.LikeVO;
 import VO.StateVO;
@@ -158,6 +158,62 @@ public class AjaxScript extends HttpServlet {
 			
 			
 		}
+		
+		if(string.equals("comment")){
+			Integer addNewsId = Integer.parseInt(request.getParameter("addNewsId"));
+			Integer userId = Integer.parseInt(request.getParameter("userId"));
+			CommentVO commentVO = new CommentVO();
+			CommentDAO commentDAO =new CommentDAO();
+			String comment= request.getParameter("comment");
+			UserVO userVO =new UserVO();
+			userVO.setUserId(userId);
+			AddNewsVO addNewsVO =new AddNewsVO();
+			addNewsVO.setAddNewsId(addNewsId);
+			commentVO.setAddNewsVO(addNewsVO);
+			commentVO.setUserVO(userVO);
+			commentVO.setComment(comment);
+			commentDAO.insert(commentVO);
+			
+			List<CommentVO> commentls = commentDAO.ajaxComment(commentVO);
+			JSONArray jsonArray = new JSONArray();
+			for(CommentVO commentVO2 :commentls){
+				jsonArray.add(commentVO2.getJsonObject());
+				
+			}
+			
+			 out.println(jsonArray);
+				
+			
+			
+		}
+		if(string.equals("commentlist")){
+			Integer addNewsId = Integer.parseInt(request.getParameter("addNewsId"));
+			Integer userId = Integer.parseInt(request.getParameter("userId"));
+			CommentVO commentVO = new CommentVO();
+			CommentDAO commentDAO =new CommentDAO();
+			UserVO userVO =new UserVO();
+			userVO.setUserId(userId);
+			AddNewsVO addNewsVO =new AddNewsVO();
+			addNewsVO.setAddNewsId(addNewsId);
+			commentVO.setAddNewsVO(addNewsVO);
+			commentVO.setUserVO(userVO);
+			
+			List<CommentVO> commentls = commentDAO.ajaxComment(commentVO);
+			JSONArray jsonArray = new JSONArray();
+			for(CommentVO commentVO2 :commentls){
+				jsonArray.add(commentVO2.getJsonObject());
+				
+			}
+			System.out.print(jsonArray);
+			 out.println(jsonArray);
+				
+			
+			
+		}
+		
+		
+		
+		
 	
 	}
 	

@@ -27,5 +27,8 @@
            <mapping resource="VO/User.hbm.xml"/>
            <mapping resource="VO/AddNewsDes.hbm.xml"/>
            <mapping resource="VO/Like.hbm.xml"/>
+           <mapping resource="VO/Comment.hbm.xml"/>
+           <mapping resource="VO/Admin.hbm.xml"/>
+             <mapping resource="VO/Login.hbm.xml"/>
 	</session-factory>
 </hibernate-configuration>

@@ -54,7 +54,7 @@ public class UserPageNews extends HttpServlet {
 			List<AddNewsVO> specifcategoryls = addNewsDAO
 					.searchSpecifCategoryNews(addNewsVO);
 			session.setAttribute("specifcategoryls", specifcategoryls);
-			response.sendRedirect("User/specificCategory.jsp?userId=1");
+			response.sendRedirect("User/specificCategory.jsp?userId=2");
 		}
 		if (string.equals("user")) {
 
@@ -91,7 +91,7 @@ public class UserPageNews extends HttpServlet {
 			addNewsVO.setAddNewsId(addNewsId);
 			List<AddNewsVO> addnewsls = addNewsDAO.searchSpecific(addNewsVO);
 			session.setAttribute("addnewsls", addnewsls);
-			response.sendRedirect("User/specificNews.jsp");
+			response.sendRedirect("User/specificNews.jsp?addNewsId="+addNewsId+"&userId=2");
 		}
 	}
 

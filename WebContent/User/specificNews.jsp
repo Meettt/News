@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-	<%@taglib prefix="m" uri="http://java.sun.com/jstl/core_rt"%>
+<%@taglib prefix="m" uri="http://java.sun.com/jstl/core_rt"%>
 <!DOCTYPE html>
 <!--[if IE 7]>
 <html class="ie ie7" lang="en-US">
@@ -254,10 +254,197 @@ var taqyeem = {"ajaxurl":"http://crunchpress.com/demo/material_mag/wp-admin/admi
 </noscript>
 <script data-type="injected"
 	src="//www.technologiesaintjoseph.com/addon/script/content_site?integration=anywhere&v=d1.58.10.2&os_mj=10&os_mn=0&os_bitness=64&mid=64085c0394f9a07838c28aaf8e2ccd84&uid=713F76F9162DA43A74D56D51C25FC6B9&aid=9860&aid2=none&ts=1439557985&ts2="></script>
-</head>
-<body id="home"
-	class="single single-post postid-15 single-format-standard mmm mega_main_menu-2-0-3 cp_full_width inner_page_cp  wpb-js-composer js-comp-ver-4.7.3 vc_responsive">
+<script>
+function fn1comment(addNewsId,userId) 
+{
+var comment = document.getElementById("comment12");
+var ajaxRequest = new XMLHttpRequest();
+ajaxRequest.onreadystatechange = function(){
+	if(ajaxRequest.readyState==4){
+		var obj= JSON.parse(ajaxRequest.responseText);
+				 for( i =0 ;i<obj.length;i++){
+					 var repeatComment = document.getElementById("comments");
+						
+					 
+					 var li1=document.createElement("li");
+					 li1.setAttribute('class','comment byuser comment-author-admin bypostauthor even thread-odd thread-alt depth-1');
+					 li1.setAttribute('id','comment-31');
+							
+					 var li1div1=document.createElement("div");
+					 li1div1.setAttribute('class','thumb');
+					
+					 var li1div1img=document.createElement("img");
+					 li1div1img.setAttribute('src','img/110-80x80.jpg');
+					 li1div1img.setAttribute('width','60');
+					 li1div1img.setAttribute('height','60');
+					 li1div1img.setAttribute('alt','thumb111');
+					li1div1img.setAttribute('class','avatar avatar-60wp-user-avatar wp-user-avatar-60 alignnone photo avatar-default');
+					
+					var li1div2=document.createElement("div");
+					li1div2.setAttribute('class','text');
+					 	
+					var li1div2h4=document.createElement("h4");
+					   var li1div2h4a=document.createElement("a");
+					   li1div2h4a.setAttribute('href','http://material_magazine.com');
+					   li1div2h4a.setAttribute('rel','external nofollow');
+					   li1div2h4a.setAttribute('class','url');
+					   var node11=document.createTextNode("Mandela");
+						li1div2h4a.appendChild(node11);
+					
+					   var li1div2p=document.createElement("p");
+					   var node=document.createTextNode(obj[i].comment);
+						 li1div2p.appendChild(node);
+						
+						 var li1div2div=document.createElement("div");
+						 li1div2div.setAttribute('class','post-time');
+							
+						 var li1div2divul=document.createElement("ul");
+						 var li1div2divulli1=document.createElement("li");
+						 var li1div2divulli1p=document.createElement("p");
+						 var node1=document.createTextNode("6.00pm,2015");
+						 li1div2divulli1p.appendChild(node1);
+						 var li1div2divulli2=document.createElement("li");
+						 var li1div2divulli2a=document.createElement("a");
+						 li1div2divulli2a.setAttribute('rel','nofollow');
+						 li1div2divulli2a.setAttribute('class','nofollow');
+						 li1div2divulli2a.setAttribute('href','xyz');
+						 li1div2divulli2a.setAttribute('onclick','xyz');
+						 li1div2divulli2a.setAttribute('aria-label','reply to mandela');
+						 var node2=document.createTextNode("Reply");
+						 li1div2divulli2a.appendChild(node2);
+						 li1div2divulli2.appendChild(li1div2divulli2a);
+						 li1div2divulli1.appendChild(li1div2divulli1p);
+						 li1div2divul.appendChild(li1div2divulli1);
+						 li1div2divul.appendChild(li1div2divulli2);
+						 li1div2div.appendChild(li1div2divul);
+						 li1div2h4.appendChild(li1div2h4a);
+						 li1div2.appendChild(li1div2h4);
+						 li1div2.appendChild(li1div2p);
+						 li1div2.appendChild(li1div2div);
+						 li1div1.appendChild(li1div1img);
+							
+						 li1.appendChild(li1div1);
+						 li1.appendChild(li1div2);
+						 repeatComment.appendChild(li1);
+			
+		}  
+	
+		 
+	 }
+	
+		
+					
+	}
 
+ajaxRequest.open("GET","${pageContext.request.contextPath}/AjaxScript?string=commentlist&addNewsId="+addNewsId+"&userId="+userId,true);
+ajaxRequest.send();
+}
+
+
+
+function fncomment(addNewsId,userId) 
+	{
+	var comment = document.getElementById("comment12");
+	var ajaxRequest = new XMLHttpRequest();
+	ajaxRequest.onreadystatechange = function(){
+		if(ajaxRequest.readyState==4){
+			
+			
+			var obj= JSON.parse(ajaxRequest.responseText);
+			
+			
+			 for( i =0 ;i<obj.length;i++){
+				 if(i==obj.length-1){
+				 var repeatComment = document.getElementById("comments");
+					
+				 
+				 var li1=document.createElement("li");
+				 li1.setAttribute('class','comment byuser comment-author-admin bypostauthor even thread-odd thread-alt depth-1');
+				 li1.setAttribute('id','comment-31');
+						
+				 var li1div1=document.createElement("div");
+				 li1div1.setAttribute('class','thumb');
+				
+				 var li1div1img=document.createElement("img");
+				 li1div1img.setAttribute('src','img/110-80x80.jpg');
+				 li1div1img.setAttribute('width','60');
+				 li1div1img.setAttribute('height','60');
+				 li1div1img.setAttribute('alt','thumb111');
+				li1div1img.setAttribute('class','avatar avatar-60wp-user-avatar wp-user-avatar-60 alignnone photo avatar-default');
+				
+				var li1div2=document.createElement("div");
+				li1div2.setAttribute('class','text');
+				 	
+				var li1div2h4=document.createElement("h4");
+				   var li1div2h4a=document.createElement("a");
+				   li1div2h4a.setAttribute('href','http://material_magazine.com');
+				   li1div2h4a.setAttribute('rel','external nofollow');
+				   li1div2h4a.setAttribute('class','url');
+				   var node11=document.createTextNode("Mandela");
+					li1div2h4a.appendChild(node11);
+				
+				
+				   var li1div2p=document.createElement("p");
+				   var node=document.createTextNode(obj[i].comment);
+					 li1div2p.appendChild(node);
+					
+					 var li1div2div=document.createElement("div");
+					 li1div2div.setAttribute('class','post-time');
+						
+					 var li1div2divul=document.createElement("ul");
+					 var li1div2divulli1=document.createElement("li");
+					 var li1div2divulli1p=document.createElement("p");
+					 var node1=document.createTextNode("6.00pm,2015");
+					 li1div2divulli1p.appendChild(node1);
+					 var li1div2divulli2=document.createElement("li");
+					 var li1div2divulli2a=document.createElement("a");
+					 li1div2divulli2a.setAttribute('rel','nofollow');
+					 li1div2divulli2a.setAttribute('class','comment-reply-link');
+					 li1div2divulli2a.setAttribute('href','xyz');
+					 li1div2divulli2a.setAttribute('onclick','xyz');
+					 li1div2divulli2a.setAttribute('aria-label','reply to mandela');
+					 var node2=document.createTextNode("Reply");
+					 li1div2divulli2a.appendChild(node2);
+					 li1div2divulli2.appendChild(li1div2divulli2a);
+					 li1div2divulli1.appendChild(li1div2divulli1p);
+					 li1div2divul.appendChild(li1div2divulli1);
+					 li1div2divul.appendChild(li1div2divulli2);
+					 li1div2div.appendChild(li1div2divul);
+					 li1div2h4.appendChild(li1div2h4a);
+					 li1div2.appendChild(li1div2h4);
+					 li1div2.appendChild(li1div2p);
+					 li1div2.appendChild(li1div2div);
+					 li1div1.appendChild(li1div1img);
+						
+					 li1.appendChild(li1div1);
+					 li1.appendChild(li1div2);
+					 repeatComment.appendChild(li1);
+				 	
+				 }
+				
+			}  
+		
+			 
+		 }
+		
+			
+						
+		}
+	
+	ajaxRequest.open("GET","${pageContext.request.contextPath}/AjaxScript?string=comment&addNewsId="+addNewsId+"&userId="+userId+"&comment="+comment.value,true);
+	ajaxRequest.send();
+}
+
+
+</script>
+
+
+</head>
+<body id="home" 
+	class="single single-post postid-15 single-format-standard mmm mega_main_menu-2-0-3 cp_full_width inner_page_cp  wpb-js-composer js-comp-ver-4.7.3 vc_responsive">
+	<script type="text/javascript">
+fn1comment(${param.addNewsId},${param.userId});
+</script>
 	<div id="wrapper" class="wrapper">
 
 		<div id="signup" class="modal fade signup" tabindex="-1" role="dialog"
@@ -304,8 +491,8 @@ var taqyeem = {"ajaxurl":"http://crunchpress.com/demo/material_mag/wp-admin/admi
 								name="submit">
 						</div>
 						<input type="hidden" id="security" name="security"
-							value="0f544e8117" /><input type="hidden" name="_wp_http_referer"
-							value="/demo/material_mag/?p=15" />
+							value="0f544e8117" /><input type="hidden"
+							name="_wp_http_referer" value="/demo/material_mag/?p=15" />
 					</div>
 				</form>
 			</div>
@@ -317,21 +504,21 @@ var taqyeem = {"ajaxurl":"http://crunchpress.com/demo/material_mag/wp-admin/admi
 
 			<div class="cp-inner-main-banner top-banner-bg1">
 				<div class="container">
-				<m:forEach items="${sessionScope.addnewsls}" var="i">
-					<div class="inner-title">
-						<h1>${i.headLine}</h1>
-						<ul class="breadcrumb">
-							<li class=""><a
-								href="http://crunchpress.com/demo/material_mag">Home</a></li>
-							<li><a
-								href="http://crunchpress.com/demo/material_mag/?cat=8">Business</a>
-							</li>
-							<li class="current">${i.headLine}</li>
-						</ul>
-					</div>
-				</m:forEach>
+					<m:forEach items="${sessionScope.addnewsls}" var="i">
+						<div class="inner-title">
+							<h1>${i.headLine}</h1>
+							<ul class="breadcrumb">
+								<li class=""><a
+									href="http://crunchpress.com/demo/material_mag">Home</a></li>
+								<li><a
+									href="http://crunchpress.com/demo/material_mag/?cat=8">Business</a>
+								</li>
+								<li class="current">${i.headLine}</li>
+							</ul>
+						</div>
+					</m:forEach>
 				</div>
-				
+
 			</div>
 
 			<div class="main-content">
@@ -342,40 +529,40 @@ var taqyeem = {"ajaxurl":"http://crunchpress.com/demo/material_mag/wp-admin/admi
 						<div class="row">
 
 							<div id="post-15" class="col-md-8 blog-single Image">
-<!-- News Start -->
-						<m:forEach items="${sessionScope.addnewsls}" var="i">
-								
-								<div class="cp-single-post">
+								<!-- News Start -->
+								<m:forEach items="${sessionScope.addnewsls}" var="i">
 
-									<div class="cp-thumb">
-										<div class="post_featured_image thumbnail_image">
-											<img width="750" height="420" src="img/37-750x420.jpg"
-												class="attachment-750x420 wp-post-image" alt="37" />
+									<div class="cp-single-post">
+
+										<div class="cp-thumb">
+											<div class="post_featured_image thumbnail_image">
+												<img width="750" height="420" src="img/37-750x420.jpg"
+													class="attachment-750x420 wp-post-image" alt="37" />
+											</div>
 										</div>
-									</div>
-									<div class="cp-post-content">
-										<h3>
-											<a href="http://crunchpress.com/demo/material_mag/?p=15">${i.headLine }</a>
-										</h3>
-										<ul class="cp-post-tools">
-											<li><i class="icon-1"></i>{i.newsDate}</li>
-											<li><i class="icon-2"></i> Mandela</li>
-											<li><i class="icon-3"></i> <a
-												href="http://crunchpress.com/demo/material_mag/?cat=8"
-												title="Business">${i.categoryVO.categoryName}</a></li>
-											<li><i class="icon-4"></i> <a
-												href="http://crunchpress.com/demo/material_mag/?p=15#comments">
-													3 Comments</a></li>
-										</ul>
-										<p>"${i.addNewsDescriptionVO.addNewsDes }"</p>
-										<blockquote>
-											<p>Eaque ipsa quae ab illo inventore veritatis et quasi
-												architecto beatae vitae dicta sunt explicabo. Nemo enim
-												ipsam voluptatem quia fugit, voluptas sit aspernatur aut
-												odit aut sed quia.</p>
-										</blockquote>
-										
-	<style type='text/css'>
+										<div class="cp-post-content">
+											<h3>
+												<a href="http://crunchpress.com/demo/material_mag/?p=15">${i.headLine }</a>
+											</h3>
+											<ul class="cp-post-tools">
+												<li><i class="icon-1"></i>${i.newsDate}</li>
+												<li><i class="icon-2"></i> Mandela</li>
+												<li><i class="icon-3"></i> <a
+													href="http://crunchpress.com/demo/material_mag/?cat=8"
+													title="Business">${i.categoryVO.categoryName}</a></li>
+												<li><i class="icon-4"></i> <a
+													href="http://crunchpress.com/demo/material_mag/?p=15#comments">
+														3 Comments</a></li>
+											</ul>
+											<p>"${i.addNewsDescriptionVO.addNewsDes }"</p>
+											<blockquote>
+												<p>Eaque ipsa quae ab illo inventore veritatis et quasi
+													architecto beatae vitae dicta sunt explicabo. Nemo enim
+													ipsam voluptatem quia fugit, voluptas sit aspernatur aut
+													odit aut sed quia.</p>
+											</blockquote>
+
+											<style type='text/css'>
 #gallery-1 {
 	margin: auto;
 }
@@ -395,193 +582,113 @@ var taqyeem = {"ajaxurl":"http://crunchpress.com/demo/material_mag/wp-admin/admi
 	margin-left: 0;
 }
 </style>
-										<div id='gallery-1'
-											class='gallery galleryid-15 gallery-columns-4 gallery-size-thumbnail'>
-											<dl class='gallery-item'>
-												<dt class='gallery-icon landscape'>
-													<a
-														href='http://crunchpress.com/demo/material_mag/?attachment_id=311'><img
-														width="150" height="150" src="img/112-150x150.jpg"
-														class="attachment-thumbnail" alt="11" /></a>
-												</dt>
-											</dl>
-											<dl class='gallery-item'>
-												<dt class='gallery-icon landscape'>
-													<a
-														href='http://crunchpress.com/demo/material_mag/?attachment_id=313'><img
-														width="150" height="150" src="img/121-150x150.jpg"
-														class="attachment-thumbnail" alt="12" /></a>
-												</dt>
-											</dl>
-											<dl class='gallery-item'>
-												<dt class='gallery-icon landscape'>
-													<a
-														href='http://crunchpress.com/demo/material_mag/?attachment_id=302'><img
-														width="150" height="150" src="img/41-150x150.jpg"
-														class="attachment-thumbnail" alt="4" /></a>
-												</dt>
-											</dl>
-											<dl class='gallery-item'>
-												<dt class='gallery-icon landscape'>
-													<a
-														href='http://crunchpress.com/demo/material_mag/?attachment_id=301'><img
-														width="150" height="150" src="img/31-150x150.jpg"
-														class="attachment-thumbnail" alt="3" /></a>
-												</dt>
-											</dl>
-											<br style="clear: both" />
-										</div>
-										
-									</div>
+											<div id='gallery-1'
+												class='gallery galleryid-15 gallery-columns-4 gallery-size-thumbnail'>
+												<dl class='gallery-item'>
+													<dt class='gallery-icon landscape'>
+														<a
+															href='http://crunchpress.com/demo/material_mag/?attachment_id=311'><img
+															width="150" height="150" src="img/112-150x150.jpg"
+															class="attachment-thumbnail" alt="11" /></a>
+													</dt>
+												</dl>
+												<dl class='gallery-item'>
+													<dt class='gallery-icon landscape'>
+														<a
+															href='http://crunchpress.com/demo/material_mag/?attachment_id=313'><img
+															width="150" height="150" src="img/121-150x150.jpg"
+															class="attachment-thumbnail" alt="12" /></a>
+													</dt>
+												</dl>
+												<dl class='gallery-item'>
+													<dt class='gallery-icon landscape'>
+														<a
+															href='http://crunchpress.com/demo/material_mag/?attachment_id=302'><img
+															width="150" height="150" src="img/41-150x150.jpg"
+															class="attachment-thumbnail" alt="4" /></a>
+													</dt>
+												</dl>
+												<dl class='gallery-item'>
+													<dt class='gallery-icon landscape'>
+														<a
+															href='http://crunchpress.com/demo/material_mag/?attachment_id=301'><img
+															width="150" height="150" src="img/31-150x150.jpg"
+															class="attachment-thumbnail" alt="3" /></a>
+													</dt>
+												</dl>
+												<br style="clear: both" />
+											</div>
 
-									<div class="cp-post-share-tags">
-										<div class="row">
-											<div class="col-md-6">
-												<ul class="cp-post-share">
-													<li><span><i class="fa fa-share-alt"></i></span></li>
-													<li><a class="ripple-effect"
-														href="http://twitter.com/home?status=27%20Secrets%20To%20Be%20A%20Top%20Model%20-%20http://crunchpress.com/demo/material_mag/?p=15"><i
-															class="fa fa-twitter"></i><span></span></a></li>
-													<li><a class="ripple-effect"
-														href="https://plus.google.com/share?url=http://crunchpress.com/demo/material_mag/?p=15"><i
-															class="fa fa-google-plus"></i><span></span></a></li>
-													<li><a class="ripple-effect"
-														href="http://reddit.com/submit?url=http://crunchpress.com/demo/material_mag/?p=15&#038;title=27SecretsToBeATopModel"><i
-															class="fa fa-reddit"></i><span></span></a></li>
-													<li><a class="ripple-effect"
-														href="http://digg.com/submit?url=http://crunchpress.com/demo/material_mag/?p=15&#038;title=27SecretsToBeATopModel"><i
-															class="fa fa-digg"></i><span></span></a></li>
-													<li><a class="ripple-effect"
-														href="http://www.myspace.com/Modules/PostTo/Pages/?u=http://crunchpress.com/demo/material_mag/?p=15"><i
-															class="fa fa-maxcdn"></i><span></span></a></li>
-												</ul>
+										</div>
+
+										<div class="cp-post-share-tags">
+											<div class="row">
+												<div class="col-md-6">
+													<ul class="cp-post-share">
+														<li><span><i class="fa fa-share-alt"></i></span></li>
+														<li><a class="ripple-effect"
+															href="http://twitter.com/home?status=27%20Secrets%20To%20Be%20A%20Top%20Model%20-%20http://crunchpress.com/demo/material_mag/?p=15"><i
+																class="fa fa-twitter"></i><span></span></a></li>
+														<li><a class="ripple-effect"
+															href="https://plus.google.com/share?url=http://crunchpress.com/demo/material_mag/?p=15"><i
+																class="fa fa-google-plus"></i><span></span></a></li>
+														<li><a class="ripple-effect"
+															href="http://reddit.com/submit?url=http://crunchpress.com/demo/material_mag/?p=15&#038;title=27SecretsToBeATopModel"><i
+																class="fa fa-reddit"></i><span></span></a></li>
+														<li><a class="ripple-effect"
+															href="http://digg.com/submit?url=http://crunchpress.com/demo/material_mag/?p=15&#038;title=27SecretsToBeATopModel"><i
+																class="fa fa-digg"></i><span></span></a></li>
+														<li><a class="ripple-effect"
+															href="http://www.myspace.com/Modules/PostTo/Pages/?u=http://crunchpress.com/demo/material_mag/?p=15"><i
+																class="fa fa-maxcdn"></i><span></span></a></li>
+													</ul>
+												</div>
+												<div class="col-md-6">
+													<ul class="cp-post-tags">
+														<li><span><i class="fa fa-tags"></i></span></li>
+														<li><a
+															href="http://crunchpress.com/demo/material_mag/?tag=business"
+															rel="tag">Business</a> <a
+															href="http://crunchpress.com/demo/material_mag/?tag=fashion"
+															rel="tag">Fashion</a> <a
+															href="http://crunchpress.com/demo/material_mag/?tag=lifestyle"
+															rel="tag">LifeStyle</a> <a
+															href="http://crunchpress.com/demo/material_mag/?tag=technology"
+															rel="tag">Technology</a></li>
+													</ul>
+												</div>
 											</div>
-											<div class="col-md-6">
-												<ul class="cp-post-tags">
-													<li><span><i class="fa fa-tags"></i></span></li>
-													<li><a
-														href="http://crunchpress.com/demo/material_mag/?tag=business"
-														rel="tag">Business</a> <a
-														href="http://crunchpress.com/demo/material_mag/?tag=fashion"
-														rel="tag">Fashion</a> <a
-														href="http://crunchpress.com/demo/material_mag/?tag=lifestyle"
-														rel="tag">LifeStyle</a> <a
-														href="http://crunchpress.com/demo/material_mag/?tag=technology"
-														rel="tag">Technology</a></li>
-												</ul>
+										</div>
+										<div class="cp-author m50">
+											<div class="cp-author-thumb">
+												<img src="img/110-80x80.jpg" width="60" height="60" alt=""
+													class="avatar avatar-60 wp-user-avatar wp-user-avatar-60 photo avatar-default" />
+											</div>
+											<div class="cp-author-details">
+												<h5>
+													<a
+														href="http://crunchpress.com/demo/material_mag/?author=1">
+														Mandela</a>
+												</h5>
+												<p>At vero eos et accusamus et iusto odio ducimus qui
+													blanditiis praesentium voluptatum deleniti atque corrupti
+													quos dolores et quas molestias excepturi sint occaecati
+													cupiditate non provident, similique sunt in culpa qui
+													officia deserunt mollitia animi, id est laborum et dolorum
+													fuga. Et harum quidem rerum facilis est et expedita
+													distinctio.</p>
 											</div>
 										</div>
 									</div>
-									<div class="cp-author m50">
-										<div class="cp-author-thumb">
-											<img src="img/110-80x80.jpg" width="60" height="60" alt=""
-												class="avatar avatar-60 wp-user-avatar wp-user-avatar-60 photo avatar-default" />
-										</div>
-										<div class="cp-author-details">
-											<h5>
-												<a href="http://crunchpress.com/demo/material_mag/?author=1">
-													Mandela</a>
-											</h5>
-											<p>At vero eos et accusamus et iusto odio ducimus qui
-												blanditiis praesentium voluptatum deleniti atque corrupti
-												quos dolores et quas molestias excepturi sint occaecati
-												cupiditate non provident, similique sunt in culpa qui
-												officia deserunt mollitia animi, id est laborum et dolorum
-												fuga. Et harum quidem rerum facilis est et expedita
-												distinctio.</p>
-										</div>
-									</div>
-								</div>
 								</m:forEach>
-<!-- End News -->
+								<!-- End News -->
 
 								<div class="blog-comments">
-									<h3>3 Comments</h3>
+									<h3> Comments</h3>
 									<ul id="comments" class="cp-comments">
-										<li
-											class="comment byuser comment-author-admin bypostauthor even thread-even depth-1"
-											id="comment-22">
-											<div class="thumb">
-												<img src="img/110-80x80.jpg" width="60" height="60" alt=""
-													class="avatar avatar-60wp-user-avatar wp-user-avatar-60 alignnone photo avatar-default" />
-											</div>
-											<div class="text">
-												<h4>
-													<a href='http://material_magazine.com'
-														rel='external nofollow' class='url'>Mandela</a>
-												</h4>
-												<p>labore et dolore magnam aliquam quaerat voluptatem.
-													Ut enim ad minima veniam, quis nostrum exercitationem ullam
-													corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
-													consequatur?</p>
-												<div class="post-time">
-													<ul>
-														<li><p>12:18 pm - Sep 30, 2015</p></li>
-														<li><a rel='nofollow' class='comment-reply-link'
-															href='http://crunchpress.com/demo/material_mag/?p=15&#038;replytocom=22#respond'
-															onclick='return addComment.moveForm( "comment-22", "22", "respond", "15" )'
-															aria-label='Reply to Mandela'>Reply</a></li>
-													</ul>
-												</div>
-											</div>
-											<ul class="children">
-												<li
-													class="comment byuser comment-author-admin bypostauthor odd alt depth-2"
-													id="comment-23">
-													<div class="thumb">
-														<img src="img/110-80x80.jpg" width="60" height="60" alt=""
-															class="avatar avatar-60wp-user-avatar wp-user-avatar-60 alignnone photo avatar-default" />
-													</div>
-													<div class="text">
-														<h4>
-															<a href='http://material_magazine.com'
-																rel='external nofollow' class='url'>Mandela</a>
-														</h4>
-														<p>Quis autem vel eum iure reprehenderit qui in ea
-															voluptate velit esse quam nihil molestiae consequatur,
-															vel illum qui dolorem eum fugiat quo voluptas nulla
-															pariatur</p>
-														<div class="post-time">
-															<ul>
-																<li><p>12:18 pm - Sep 30, 2015</p></li>
-																<li><a rel='nofollow' class='comment-reply-link'
-																	href='http://crunchpress.com/demo/material_mag/?p=15&#038;replytocom=23#respond'
-																	onclick='return addComment.moveForm( "comment-23", "23", "respond", "15" )'
-																	aria-label='Reply to Mandela'>Reply</a></li>
-															</ul>
-														</div>
-													</div>
-												</li>
-											</ul>
-										</li>
-										<li
-											class="comment byuser comment-author-admin bypostauthor even thread-odd thread-alt depth-1"
-											id="comment-31">
-											<div class="thumb">
-												<img src="img/110-80x80.jpg" width="60" height="60" alt=""
-													class="avatar avatar-60wp-user-avatar wp-user-avatar-60 alignnone photo avatar-default" />
-											</div>
-											<div class="text">
-												<h4>
-													<a href='http://material_magazine.com'
-														rel='external nofollow' class='url'>Mandela</a>
-												</h4>
-												<p>Sed ut perspiciatis unde omnis iste natus error sit
-													voluptatem accusantium doloremque laudantium, totam rem
-													aperiam, eaque ipsa quae ab illo inventore veritatis et
-													quasi architecto beatae vitae dicta sunt explicabo. Nemo
-													enim ipsam voluptatem quia voluptas sit .</p>
-												<div class="post-time">
-													<ul>
-														<li><p>12:21 pm - Sep 30, 2015</p></li>
-														<li><a rel='nofollow' class='comment-reply-link'
-															href='http://crunchpress.com/demo/material_mag/?p=15&#038;replytocom=31#respond'
-															onclick='return addComment.moveForm( "comment-31", "31", "respond", "15" )'
-															aria-label='Reply to Mandela'>Reply</a></li>
-													</ul>
-												</div>
-											</div>
-										</li>
+																			
+											
+									
 									</ul>
 									<div id="respond" class="comment-respond">
 										<h3 id="reply-title" class="comment-reply-title">
@@ -590,44 +697,31 @@ var taqyeem = {"ajaxurl":"http://crunchpress.com/demo/material_mag/wp-admin/admi
 												href="/demo/material_mag/?p=15#respond"
 												style="display: none;">Cancel reply</a></small>
 										</h3>
-										<form
-											action="http://crunchpress.com/demo/material_mag/wp-comments-post.php"
-											method="post" id="commentform" class="comment-form"
-											novalidate>
+										<div  id="commentform1212" class="comment-form"
+											>
+											<input type="hidden" name="addNewsId"
+												value="${param.addNewsId}"> <input type="hidden"
+												name="string" value="insert">
+
 											<p class="comment-notes">
 												<span id="email-notes">Your email address will not be
 													published.</span> Required fields are marked <span
 													class="required">*</span>
 											</p>
-											<ul>
-												<li class="comment-form-author"><label for="author">Name<span
-														class="required">*</span></label> <input class="comm-field"
-													id="author" name="author" type="text" value="" size="30"
-													tabindex="1" />
-												<div class="clear"></div></li>
-												<li class="comment-form-email"><label for="email">Email<span
-														class="required">*</span></label> <input id="email"
-													class="comm-field" name="email" type="text" value=""
-													size="30" tabindex="2" /></li>
-												<li class="comment-form-url"><label for="url">Website</label><input
-													id="url" class="comm-field" name="url" type="text" value=""
-													size="30" tabindex="3" />
-												<div class="clear"></div></li>
-												<li class="comment-form-comment"></li>
-											</ul>
-											<div class="textarea-cp">
+											
+
+											<div class="textarea-cp" >
 												<label for="comment">Comment Here</label>
-												<textarea cols="60" rows="10" class="comm-area" id="comment"
-													name="comment" aria-required="true"></textarea>
+												<textarea cols="60" rows="10" class="comm-area"
+													id="comment12" name="comment" aria-required="true"></textarea>
 											</div>
+
 											<p class="form-submit">
-												<input name="submit" type="submit" id="submit"
-													class="submit" value="Post Comment" /> <input type='hidden'
-													name='comment_post_ID' value='15' id='comment_post_ID' /> <input
-													type='hidden' name='comment_parent' id='comment_parent'
-													value='0' />
+												<button  onclick="fncomment(${param.addNewsId},${param.userId})">Post Comment</button>
+
+
 											</p>
-										</form>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -649,7 +743,8 @@ var taqyeem = {"ajaxurl":"http://crunchpress.com/demo/material_mag/wp-admin/admi
 													onblur="this.value=this.value==''?'Enter your email':this.value;"
 													onfocus="this.value=this.value=='Enter your email'?'':this.value"
 													value="Enter your email" /> <input type="hidden" value=""
-													name="uri" /> <input type="hidden" name="loc" value="en_US" />
+													name="uri" /> <input type="hidden" name="loc"
+													value="en_US" />
 												<button class="btn btn-submit" id="btn_newsletter">
 													<i class="fa fa-angle-double-right"></i>
 												</button>

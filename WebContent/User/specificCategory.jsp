@@ -459,7 +459,7 @@ var taqyeem = {"ajaxurl":"http://crunchpress.com/demo/material_mag/wp-admin/admi
 
 															<h3>
 																<a
-																	href="http://crunchpress.com/demo/material_mag/?p=379">
+																	href="<%=request.getContextPath()%>/UserPageNews?string=specific&addNewsId=${pageScope.addNewsId}">
 																	${pageScope.headLine } </a>
 															</h3>
 															<ul class="cp-post-tools">

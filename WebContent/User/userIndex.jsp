@@ -545,7 +545,7 @@ function sharePopup(addNewsId){
 								<a href="p=16.jsp" class="btn ripple-effect btn-gray manimate">Featured</a>
 							</div>
 							<h1>
-								<a href="<%=request.getContextPath()%>/UserPageNews?string=specific&addNewsId=${i.addNewsId }">${top.headLine}</a>
+								<a href="<%=request.getContextPath()%>/UserPageNews?string=specific&addNewsId=${top.addNewsId }">${top.headLine}</a>
 							</h1>
 							<ul class="cp-post-tools">
 								<li>
