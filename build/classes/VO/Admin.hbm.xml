@@ -25,6 +25,9 @@
  <column name="adminEmail"></column>
  </property>
  
+ <many-to-one name="LoginVO" class="VO.LoginVO" column="loginId"></many-to-one>
+ 
+ 
  </class>
 
 

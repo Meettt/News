@@ -165,6 +165,92 @@
 														</span>
 													</a>
 													</li>
+
+
+
+
+
+													<li id="menu-item-97"
+														class="menu-item menu-item-type-custom menu-item-object-custom menu-item-97 post_type_dropdown default_style drop_to_right submenu_full_width columns5">
+														<a class="item_link  disable_icon" tabindex="0"> <i
+															class=""></i> <span class="link_content"> <span
+																class="link_text"> Latest News </span>
+														</span>
+													</a>
+														<ul class="mega_dropdown">
+														<cc:forEach items="${sessionScope.latestnews}" var="i" varStatus="j">
+															<cc:if test="${j.count lt 6}">
+															<li class="post_item" style="width: 20%;">
+																<div class="processed_image">
+																	<img
+																		src="../doc/${i.addNewsId}.jpg"
+																		alt="Spare Sometime For Yourself"
+																		title="Spare Sometime For Yourself" />
+																	<div class="cover icon">
+																		<a href="p=386.jsp" class="icon"><i
+																			class="im-icon-plus-circle"></i></a>
+																	</div>
+																</div>
+																<div class="post_details" style="height: 150px;overflow: hidden;">
+																	<%-- <div class="processed_image">
+																		<img
+																			src="../doc/${i.addNewsId}.jpg"
+																			alt="Spare Sometime For Yourself"
+																			title="Spare Sometime For Yourself" />
+																	</div> --%>
+																	<div class="post_icon">
+																		<i class="im-icon-plus-circle"></i>
+																	</div>
+																	<div class="post_title">${i.headLine}</div>
+																	<div class="post_description">${i.addNewsDescriptionVO.addNewsDes }</div>
+																</div>
+															</li>
+															</cc:if>
+															</cc:forEach>
+														</ul>
+													</li>
+
+
+
+
+
+
+
+
+<%-- 
+
+
+
+													<li id="menu-item-50"
+														class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-46 current_page_item current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-50 default_dropdown default_style drop_to_right submenu_default_width columns1">
+														<a href="material_mag.jsp" class="item_link  disable_icon"
+														tabindex="0"> <i class=""></i> <span
+															class="link_content"> <span class="link_text">
+																	 </span>
+														</span>
+													</a>
+														<ul class="mega_dropdown">
+														<cc:forEach items="${sessionScope.latestnews}" var="i">
+														
+														
+														<li id="menu-item-693"
+																			class="menu-item menu-item-type-post_type menu-item-object-page menu-item-693 default_dropdown default_style drop_to_right submenu_default_width columns1">
+																			<a
+																			href="http://crunchpress.com/demo/material_mag/?page_id=165"
+																			class="item_link  disable_icon" tabindex="0"> <i
+																				class=""></i> 
+																				<span class="link_content"> 
+																				<span class="link_text">${i.addNewsId}</span>
+																			</span>
+																		</a>
+																		</li>
+														
+														
+														
+														
+														</cc:forEach>
+														</ul>
+													</li> --%>
 												<cc:forEach items="${sessionScope.menuList }" var="i">
 													<cc:choose>
 														<cc:when test="${not empty i.value }">

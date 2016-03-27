@@ -34,7 +34,7 @@ public void setUserVO(UserVO userVO) {
 }
 @SuppressWarnings("unchecked")
 public JSONObject getJsonObject() {
-	jsonObject.put("name", userVO.getName());
+	jsonObject.put("name", userVO.getFirstName());
 	return jsonObject;
 }
 }

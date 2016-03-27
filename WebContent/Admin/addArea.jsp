@@ -64,22 +64,11 @@
 
 <link rel="stylesheet" href="css/colorpicker.css">
 <script>
-				function dis(){
-					var country = document.getElementById("countryId");
-					if(country.value=='Select One'){
-						 document.getElementById("stateId").disabled=true;
-						 document.getElementById("cityId").disabled=true;
-					}
-					}
 					function state(){
 						var xreq = new XMLHttpRequest(); 
 						var i;
 						var country = document.getElementById("countryId");
-						if(country.value=='Select One'){
-							document.getElementById("stateId").disabled=true;
-							return;
-						}
-						 document.getElementById("stateId").disabled=false;
+						
 						 xreq.onreadystatechange = function () {
 							 if(xreq.readyState ==4){
 								 allremoveState(); 
@@ -89,21 +78,24 @@
 									optiondiv.value=obj[i].stateId;
 									optiondiv.text=obj[i].stateName;
 									document.form.stateId.options.add(optiondiv);
+									
 								}
+							
+								 
 							 }
+							
 						}
 						xreq.open("GET","${pageContext.request.contextPath}/AjaxScript?string=state&countryId="+country.value,true);
 						xreq.send();
+						
 					}
+					
+					
+					
 					function city(){
 						var xreq = new XMLHttpRequest(); 
 						var i;
 						var stateId = document.getElementById("stateId");
-						if(stateId.value=='Select One'){
-							document.getElementById("cityId").disabled=true;
-							return;
-						}
-						 document.getElementById("cityId").disabled=false;
 						 xreq.onreadystatechange = function () {
 							 if(xreq.readyState ==4){
 								 allremoveCity();
@@ -113,22 +105,29 @@
 									optiondiv.value=obj[i].cityId;
 									optiondiv.text=obj[i].cityName;
 									document.form.cityId.options.add(optiondiv);
+									
 								}
+							
+								 
 							 }
+							
 						}
 						xreq.open("GET","${pageContext.request.contextPath}/AjaxScript?string=city&stateId="+stateId.value,true);
 						xreq.send();
+
 	}
+
 	function allremoveState() {
 		var stateId = document.getElementById("stateId");
-		for (var i = stateId.length; i >= 0; i--) {
+		for (var i = stateId.length; i >= 1; i--) {
 			document.form.stateId.options.remove(i);
 		}
 	}
 	function allremoveCity(){
 		var cityId = document.getElementById("cityId");
-		for (var i = cityId.length; i >= 0; i--) {
+		for (var i = cityId.length; i >= 1; i--) {
 			document.form.cityId.options.remove(i);
+
 		}
 	}
 </script>
@@ -190,6 +189,8 @@
 
 											<select class="form-control mb-md" name="stateId"
 												id="stateId"   onchange="city()">
+												<option selected="selected">Select One</option>
+												
 
 											</select>
 
@@ -201,6 +202,8 @@
 										<div class="col-md-6">
 
 											<select class="form-control mb-md" name="cityId" id="cityId">
+											<option selected="selected">Select One</option>
+												
 											</select>
 
 										</div>
@@ -208,6 +211,7 @@
 									</div>
 
 									<!--End city -->
+									
 
 									<div class="form-group">
 										<label class="col-md-3 control-label" for="inputDefault">Area-Name</label>

@@ -17,6 +17,15 @@ public class ReporterRegistrationVO implements Serializable {
 	private Date birthDate;
 	private String phoneNum;
 	private String experiance;
+	private LoginVO loginVO;
+	
+	public LoginVO getLoginVO() {
+		return loginVO;
+	}
+	public void setLoginVO(LoginVO loginVO) {
+		this.loginVO = loginVO;
+	}
+	
 
 	public String getPassword() {
 		return password;

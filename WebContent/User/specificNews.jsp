@@ -108,7 +108,6 @@ img.wp-smiley, img.emoji {
 	href='css/font-awesome.css?ver=2.0.3' type='text/css' media='all' />
 <link rel='stylesheet' id='jquery-ui-smoothness-css'
 	href='css/jquery-ui.min.css?ver=1.10.3' type='text/css' media='screen' />
-<script type='text/javascript' src='js/jquery.js?ver=1.11.3'></script>
 <script type='text/javascript' src='js/jquery-migrate.min.js?ver=1.2.1'></script>
 <script type='text/javascript' src='js/tie.js?ver=4.3.1'></script>
 <script type='text/javascript'>
@@ -274,7 +273,7 @@ ajaxRequest.onreadystatechange = function(){
 					 li1div1.setAttribute('class','thumb');
 					
 					 var li1div1img=document.createElement("img");
-					 li1div1img.setAttribute('src','img/110-80x80.jpg');
+					 li1div1img.setAttribute('src','../doc/user'+addNewsId+'.jpg');
 					 li1div1img.setAttribute('width','60');
 					 li1div1img.setAttribute('height','60');
 					 li1div1img.setAttribute('alt','thumb111');
@@ -288,7 +287,7 @@ ajaxRequest.onreadystatechange = function(){
 					   li1div2h4a.setAttribute('href','http://material_magazine.com');
 					   li1div2h4a.setAttribute('rel','external nofollow');
 					   li1div2h4a.setAttribute('class','url');
-					   var node11=document.createTextNode("Mandela");
+					   var node11=document.createTextNode(obj[i].firstName);
 						li1div2h4a.appendChild(node11);
 					
 					   var li1div2p=document.createElement("p");
@@ -366,7 +365,7 @@ function fncomment(addNewsId,userId)
 				 li1div1.setAttribute('class','thumb');
 				
 				 var li1div1img=document.createElement("img");
-				 li1div1img.setAttribute('src','img/110-80x80.jpg');
+				 li1div1img.setAttribute('src','../doc/user'+addNewsId+'.jpg');
 				 li1div1img.setAttribute('width','60');
 				 li1div1img.setAttribute('height','60');
 				 li1div1img.setAttribute('alt','thumb111');
@@ -380,7 +379,7 @@ function fncomment(addNewsId,userId)
 				   li1div2h4a.setAttribute('href','http://material_magazine.com');
 				   li1div2h4a.setAttribute('rel','external nofollow');
 				   li1div2h4a.setAttribute('class','url');
-				   var node11=document.createTextNode("Mandela");
+				   var node11=document.createTextNode(obj[i].firstName);
 					li1div2h4a.appendChild(node11);
 				
 				
@@ -536,7 +535,7 @@ fn1comment(${param.addNewsId},${param.userId});
 
 										<div class="cp-thumb">
 											<div class="post_featured_image thumbnail_image">
-												<img width="750" height="420" src="img/37-750x420.jpg"
+												<img width="750" height="420" src="../doc/${i.addNewsId }.jpg"
 													class="attachment-750x420 wp-post-image" alt="37" />
 											</div>
 										</div>
@@ -939,97 +938,47 @@ fn1comment(${param.addNewsId},${param.userId});
 									</div>
 								</div>
 								<div
-									class="widget sidebar_section sidebar-recent-post latest_post">
-									<div class="widget latest-posts">
-										<h3>LATEST POSTS</h3>
-										<div class="cp-sidebar-content">
-											<ul class="small-grid">
-
-												<li>
-													<div class="small-post">
-														<div class="cp-thumb">
-															<a href="http://crunchpress.com/demo/material_mag/?p=464"><img
-																width="80" height="80" src="img/18-80x80.jpg"
-																class="attachment-80x80 wp-post-image" alt="18" /></a>
-														</div>
-														<div class="cp-post-content">
-															<h3 class="border_none">
-																<a
-																	href="http://crunchpress.com/demo/material_mag/?p=464">
-																	Crunch Games and Title Wi... </a>
-															</h3>
-															<ul class="cp-post-tools">
-																<li><i class="icon-1"></i>Sep 21, 2015</li>
-																<li><i class="icon-3"></i> <a class="purple-text"
-																	href="http://crunchpress.com/demo/material_mag/?p=464">
-																		Magazine </a></li>
-																<li><i class="icon-4"></i> <a
-																	href="http://crunchpress.com/demo/material_mag/?p=464#respond">
-																		0 Comment</a></li>
-															</ul>
-														</div>
+								class="widget sidebar_section sidebar-recent-post latest_post">
+								<div class="widget latest-posts">
+									<h3>LATEST POSTS</h3>
+									<div class="cp-sidebar-content">
+									<ul class="small-grid">
+									
+									<m:forEach items="${sessionScope.latestls }" var="latest" varStatus="j">
+									
+										
+											<li>
+												<div class="small-post">
+													<div class="cp-thumb">
+														<a href="http://crunchpress.com/demo/material_mag/?p=464"><img
+															width="120" height="80" src="../doc/${ latest.addNewsId}.jpg"
+															class="attachment-80x80 wp-post-image" alt="18" /></a>
 													</div>
-												</li>
-
-
-												<li>
-													<div class="small-post">
-														<div class="cp-thumb">
-															<a href="http://crunchpress.com/demo/material_mag/?p=421"><img
-																width="80" height="80" src="img/8-80x80.jpg"
-																class="attachment-80x80 wp-post-image" alt="8" /></a>
-														</div>
-														<div class="cp-post-content">
-															<h3 class="border_none">
-																<a
-																	href="http://crunchpress.com/demo/material_mag/?p=421">
-																	Business and Emerging Tyc... </a>
-															</h3>
-															<ul class="cp-post-tools">
-																<li><i class="icon-1"></i>Sep 17, 2015</li>
-																<li><i class="icon-3"></i> <a class="purple-text"
-																	href="http://crunchpress.com/demo/material_mag/?p=421">
-																		Business </a></li>
-																<li><i class="icon-4"></i> <a
-																	href="http://crunchpress.com/demo/material_mag/?p=421#comments">
-																		1 Comment</a></li>
-															</ul>
-														</div>
+													<div class="cp-post-content">
+														<h3 class="border_none">
+															<a href="<%=request.getContextPath()%>/UserPageNews?string=specific&addNewsId=${latest.addNewsId }">
+																${latest.headLine} </a>
+														</h3>
+														<ul class="cp-post-tools">
+															<li><i class="icon-1"></i>Sep 21, 2015</li>
+															<li><i class="icon-3"></i> <a class="purple-text"
+																href="http://crunchpress.com/demo/material_mag/?p=464">
+																	Magazine </a></li>
+															<li><i class="icon-4"></i> <a
+																href="http://crunchpress.com/demo/material_mag/?p=464#respond">
+																	0 Comment</a></li>
+														</ul>
 													</div>
-												</li>
-
-
-												<li>
-													<div class="small-post">
-														<div class="cp-thumb">
-															<a href="http://crunchpress.com/demo/material_mag/?p=419"><img
-																width="80" height="80" src="img/34-80x80.jpg"
-																class="attachment-80x80 wp-post-image" alt="34" /></a>
-														</div>
-														<div class="cp-post-content">
-															<h3 class="border_none">
-																<a
-																	href="http://crunchpress.com/demo/material_mag/?p=419">
-																	Technology and Its Impact... </a>
-															</h3>
-															<ul class="cp-post-tools">
-																<li><i class="icon-1"></i>Sep 17, 2015</li>
-																<li><i class="icon-3"></i> <a class="purple-text"
-																	href="http://crunchpress.com/demo/material_mag/?p=419">
-																		Technology </a></li>
-																<li><i class="icon-4"></i> <a
-																	href="http://crunchpress.com/demo/material_mag/?p=419#comments">
-																		1 Comment</a></li>
-															</ul>
-														</div>
-													</div>
-												</li>
-
-											</ul>
-										</div>
+												</div>
+											</li>
+										
+										
+										</m:forEach>
+										</ul>
 									</div>
 								</div>
 							</div>
+										</div>
 						</div>
 					</div>
 

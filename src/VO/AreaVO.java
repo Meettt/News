@@ -1,5 +1,7 @@
 package VO;
 
+import org.json.simple.JSONObject;
+
 public class AreaVO {
 	private int areaId;
 	private String areaName;
@@ -7,6 +9,18 @@ public class AreaVO {
 	private CityVO cityVO;
 	private StateVO stateVO;
 	private CountryVO countryVO;
+	private JSONObject jsonObject = new JSONObject();
+	public JSONObject getJsonObject() {
+		jsonObject.put("areaId", areaId);
+		jsonObject.put("areaName", areaName);
+		
+		return jsonObject;
+	}
+	public void setJsonObject(JSONObject jsonObject) {
+		this.jsonObject = jsonObject;
+	}
+	
+
 	public int getAreaId() {
 		return areaId;
 	}

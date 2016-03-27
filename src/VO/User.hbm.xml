@@ -9,9 +9,38 @@
  		<generator class="increment"></generator>
  	</id>
  
- <property name="name">
- <column name="name"></column>
+ <property name="email">
+ <column name="email"></column>
  </property>
+ <property name="pwd">
+ <column name="pwd"></column>
+ </property>
+ <property name="userName">
+ <column name="userName"></column>
+ </property>
+ <property name="firstName">
+ <column name="firstName"></column>
+ </property>
+ <property name="lastName">
+ <column name="lastName"></column>
+ </property>
+ <property name="gender">
+ <column name="gender"></column>
+ </property>
+ <property name="birthDate" type="date">
+ <column name="birthDate"></column>
+ </property>
+ 
+   <property name="phoneNum" >
+ <column name="phoneNum"></column>
+ </property>
+ 
+ 
+  <many-to-one name="LoginVO" class="VO.LoginVO" column="loginId"></many-to-one>
+ <many-to-one name="AreaVO" class="VO.AreaVO" column="areaId"></many-to-one>
+ <many-to-one name="CityVO" class="VO.CityVO" column="cityId"></many-to-one>
+ <many-to-one name="StateVO" class="VO.StateVO" column="stateId"></many-to-one>
+<many-to-one name="CountryVO" class="VO.CountryVO" column="countryId"></many-to-one>
  
   
  </class>

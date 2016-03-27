@@ -65,6 +65,147 @@
 <link rel="stylesheet" href="css/color2.css" />
 
 <link rel="stylesheet" href="css/colorpicker.css">
+<script>
+						function state(){
+						var xreq = new XMLHttpRequest(); 
+						var i;
+						var country = document.getElementById("countryId");
+						
+						
+						 xreq.onreadystatechange = function () {
+							 if(xreq.readyState ==4){
+								 allremoveState(); 
+								var obj= JSON.parse(xreq.responseText);
+								
+								alert("state");
+								
+								for( i =0 ;i<obj.length;i++){
+									var optiondiv= document.createElement("option");
+									optiondiv.value=obj[i].stateId;
+									optiondiv.text=obj[i].stateName;
+									document.form.stateId.options.add(optiondiv);
+									
+								}
+							
+								 
+							 }
+							
+						}
+						xreq.open("GET","${pageContext.request.contextPath}/AjaxScript?string=state&countryId="+country.value,true);
+						xreq.send();
+						
+					}
+					
+					
+					
+					function city(){
+						var xreq = new XMLHttpRequest(); 
+						var i;1
+						var stateId = document.getElementById("stateId");
+						 xreq.onreadystatechange = function () {
+							 if(xreq.readyState ==4){
+								 allremoveCity();
+								var obj= JSON.parse(xreq.responseText);
+								for( i =0 ;i<obj.length;i++){
+									var optiondiv= document.createElement("option");
+									optiondiv.value=obj[i].cityId;
+									optiondiv.text=obj[i].cityName;
+									document.form.cityId.options.add(optiondiv);
+									
+								}
+							
+								 
+							 }
+							
+						}
+						xreq.open("GET","${pageContext.request.contextPath}/AjaxScript?string=city&stateId="+stateId.value,true);
+						xreq.send();
+
+	}
+					function area(){
+						var xreq = new XMLHttpRequest(); 
+						var i;
+						var cityId = document.getElementById("cityId");
+						
+						 xreq.onreadystatechange = function () {
+							 if(xreq.readyState ==4){
+								 allremoveArea();
+								var obj= JSON.parse(xreq.responseText);
+								for( i =0 ;i<obj.length;i++){
+									var optiondiv= document.createElement("option");
+									optiondiv.value=obj[i].areaId;
+									optiondiv.text=obj[i].areaName;
+									document.form.areaId.options.add(optiondiv);
+									
+								}
+							
+								 
+							 }
+							
+						}
+						xreq.open("GET","${pageContext.request.contextPath}/AjaxScript?string=area&cityId="+cityId.value,true);
+						xreq.send();
+
+	}
+					function sub_category(){
+						var xreq = new XMLHttpRequest(); 
+						var i;
+						var categoryId = document.getElementById("categoryId");
+						
+						 xreq.onreadystatechange = function () {
+							 if(xreq.readyState ==4){
+								 allremoveSub_category();
+								var obj= JSON.parse(xreq.responseText);
+								for( i =0 ;i<obj.length;i++){
+									var optiondiv= document.createElement("option");
+									optiondiv.value=obj[i].sub_categoryId;
+									optiondiv.text=obj[i].sub_categoryName;
+									document.form.sub_categoryId.options.add(optiondiv);
+									
+								}
+							
+								 
+							 }
+							
+						}
+						xreq.open("GET","${pageContext.request.contextPath}/AjaxScript?string=sub_category&categoryId="+categoryId.value,true);
+						xreq.send();
+
+	}
+
+
+
+	function allremoveState() {
+		var stateId = document.getElementById("stateId");
+		for (var i = stateId.length; i >= 1; i--) {
+			document.form.stateId.options.remove(i);
+		}
+	}
+	function allremoveCity(){
+		var cityId = document.getElementById("cityId");
+		for (var i = cityId.length; i >= 1; i--) {
+			document.form.cityId.options.remove(i);
+
+		}
+	}
+	function allremoveArea(){
+		var areaId = document.getElementById("areaId");
+		for (var i = areaId.length; i >= 1; i--) {
+			document.form.areaId.options.remove(i);
+
+		}
+	}
+	function allremoveSub_category(){
+		var sub_categoryId = document.getElementById("sub_categoryId");
+		for (var i = sub_categoryId.length; i >= 1; i--) {
+			document.form.sub_categoryId.options.remove(i);
+
+		}
+	}
+
+
+</script>
+
 </head>
 <body>
 	<section class="body">
@@ -88,7 +229,7 @@
 					<div class="col-lg-12">
 						<!-- Country -->
 						<form id="form" class="form-horizontal form-bordered"
-							action="<%=request.getContextPath()%>/AddNews" method="post" enctype="multipart/form-data">
+							action="<%=request.getContextPath()%>/AddNews" method="post" enctype="multipart/form-data" name="form">
 							<section class="panel">
 								<header class="panel-heading">
 									<div class="panel-actions">
@@ -106,7 +247,9 @@
 												<label class="col-md-3 control-label" for="inputSuccess">Country</label>
 												<div class="col-md-6">
 													
-													<select class="form-control mb-md" name="countryId">
+													<select class="form-control mb-md" name="countryId" id="countryId" onchange="state()">
+													<option selected="selected">Select One</option>
+												
 													<m:forEach items="${sessionScope.countryls}" var="country">
 														<option value="${country.countryId}">${country.countryName}</option>
 													</m:forEach>
@@ -121,11 +264,10 @@
 												<label class="col-md-3 control-label" for="inputSuccess">State</label>
 												<div class="col-md-6">
 													
-													<select class="form-control mb-md" name="stateId">
-													<m:forEach items="${sessionScope.statels}" var="state">
-														<option value="${state.stateId}">${state.stateName}</option>
-													</m:forEach>
-												</select>
+													<select class="form-control mb-md" name="stateId" id="stateId" onchange="city()">
+													<option selected="selected">Select One</option>
+												
+													</select>
 													
 												</div>
 												
@@ -134,11 +276,9 @@
 												<label class="col-md-3 control-label" for="inputSuccess">City</label>
 												<div class="col-md-6">
 													
-													<select class="form-control mb-md" name="cityId">
-													<m:forEach items="${sessionScope.cityls}" var="city">
-														<option value="${city.cityId}">${city.cityName}</option>
-													</m:forEach>
-												</select>
+													<select class="form-control mb-md" name="cityId" id="cityId" onchange="area()">
+													<option selected="selected">Select One</option>
+													</select>
 													
 												</div>
 								
@@ -150,10 +290,9 @@
 												<label class="col-md-3 control-label" for="inputSuccess">Area</label>
 												<div class="col-md-6">
 													
-													<select class="form-control mb-md" name="areaId">
-													<m:forEach items="${sessionScope.areals}" var="area">
-														<option value="${area.areaId}">${area.areaName}</option>
-													</m:forEach>
+													<select class="form-control mb-md" name="areaId" id="areaId">
+													<option selected="selected">Select One</option>
+												
 												</select>
 													
 												</div>
@@ -163,7 +302,9 @@
 												<label class="col-md-3 control-label" for="inputSuccess">Category</label>
 												<div class="col-md-6">
 													
-													<select class="form-control mb-md" name="categoryId">
+													<select class="form-control mb-md" name="categoryId" id="categoryId" onchange="sub_category()">
+													<option selected="selected">Select One</option>
+												
 													<m:forEach items="${sessionScope.categoryls}" var="category">
 														<option value="${category.categoryId}">${category.categoryName}</option>
 													</m:forEach>
@@ -176,10 +317,9 @@
 												<label class="col-md-3 control-label" for="inputSuccess">Sub-Category</label>
 												<div class="col-md-6">
 													
-													<select class="form-control mb-md" name="sub_categoryId">
-													<m:forEach items="${sessionScope.sub_categoryls}" var="sub_category">
-														<option value="${sub_category.sub_categoryId}">${sub_category.sub_categoryName}</option>
-													</m:forEach>
+													<select class="form-control mb-md" name="sub_categoryId" id="sub_categoryId">
+													<option selected="selected">Select One</option>
+												
 												</select>
 													
 												</div>

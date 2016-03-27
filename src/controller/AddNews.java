@@ -296,6 +296,8 @@ public class AddNews extends HttpServlet {
 			List maxId =addNewsDAO.maxId(addNewsVO);
 		    Part filePart = request.getPart("file"); // Retrieves <input type="file" name="file">
 		    String fileName = filePart.getSubmittedFileName();
+			System.out.println(" Myfile Name :: "+fileName);
+			
 		    InputStream fileContent = filePart.getInputStream();
 		    // ... (do your job here)
 		    fileName = maxId.get(0)+".jpg";

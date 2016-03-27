@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-	<%@taglib prefix="m" uri="http://java.sun.com/jstl/core_rt" %>
-	
+<%@taglib prefix="m" uri="http://java.sun.com/jstl/core_rt"%>
+
 <!DOCTYPE html>
 <!--[if IE 7]>
 <html class="ie ie7" lang="en-US">
@@ -19,8 +19,7 @@
 
 <link rel="profile" href="http://gmpg.org/xfn/11">
 
-<link rel="shortcut icon"
-	href="img/favicon.png" />
+<link rel="shortcut icon" href="img/favicon.png" />
 <title>Material Mag WordPress Theme | Just another WordPress
 	site</title>
 <meta name='robots' content='noindex,follow' />
@@ -44,10 +43,10 @@ img.wp-smiley, img.emoji {
 </style>
 <link rel='stylesheet' id='taqyeem-style-css'
 	href='css/style.css?ver=4.3.1' type='text/css' media='all' />
-	
+
 <link rel='stylesheet' id='mmm_mega_main_menu-css'
 	href='css/cache.skin.css?ver=1443769525' type='text/css' media='all' />
-	
+
 <link rel='stylesheet' id='ls-google-fonts-css'
 	href='http://fonts.googleapis.com/css?family=Lato:100,300,regular,700,900%7COpen+Sans:300%7CIndie+Flower:regular%7COswald:300,regular,700&#038;subset=latin%2Clatin-ext'
 	type='text/css' media='all' />
@@ -57,13 +56,13 @@ img.wp-smiley, img.emoji {
 	href='css/shortcode.css?ver=4.3.1' type='text/css' media='all' />
 <link rel='stylesheet' id='rs-plugin-settings-css'
 	href='css/settings.css?ver=4.6.93' type='text/css' media='all' />
-	
-	
+
+
 <!-- Home Index CSS -->
 <link rel='stylesheet' id='rs-plugin-settings-inline-css'
-	href='css/homeIndex.css' type='text/css'  />
-	
-	
+	href='css/homeIndex.css' type='text/css' />
+
+
 <link rel='stylesheet' id='woocommerce-smallscreen-css'
 	href='css/woocommerce-smallscreen.css?ver=2.4.7' type='text/css'
 	media='only screen and (max-width: 768px)' />
@@ -212,9 +211,11 @@ var wc_add_to_cart_params = {"ajax_url":"\/demo\/material_mag\/wp-admin\/admin-a
 <style type="text/css" media="screen"></style>
 
 <!-- HomeIndex2  -->
-<link type="text/css" href="css/homeIndex2.css"  id="stylesheet" rel='stylesheet'>
+<link type="text/css" href="css/homeIndex2.css" id="stylesheet"
+	rel='stylesheet'>
 <!-- HomeIndex3  -->
-<link type="text/css" href="css/homeIndex3.css"  id="stylesheet" rel='stylesheet'>
+<link type="text/css" href="css/homeIndex3.css" id="stylesheet"
+	rel='stylesheet'>
 
 
 
@@ -242,7 +243,6 @@ var wc_add_to_cart_params = {"ajax_url":"\/demo\/material_mag\/wp-admin\/admin-a
 
 .vc_custom_1442905283194 {
 	margin-top: 50px !important;
-
 }
 </style>
 <style type="text/css">
@@ -258,7 +258,7 @@ var wc_add_to_cart_params = {"ajax_url":"\/demo\/material_mag\/wp-admin\/admin-a
 </style>
 </noscript>
 <!-- Like Button Ajax -->
-<script >
+<script>
 function likeButtonCall(addNewsId,userId) {
 	var likebutton = document.getElementById("likebutton["+addNewsId+"]");
 	if(likebutton.innerHTML=='Like'){
@@ -389,26 +389,25 @@ function onclickA(addNewsId){
 
 </script>
 <style type="text/css">
-.likebutton{
-background-color: #32aae1;
-color: white !important;
-border-radius: 2px;
-box-shadow: 0 0 0px rgba(0, 0, 0, .20);
-border: 0px;
-}
-.likeValue{
-background-color: #32aae1;
-color: white !important;
-padding-left: 5px;
-border-radius: 2px;
-box-shadow: 0 0 4px rgba(0, 0, 0, .20);
+.likebutton {
+	background-color: #32aae1;
+	color: white !important;
+	border-radius: 2px;
+	box-shadow: 0 0 0px rgba(0, 0, 0, .20);
+	border: 0px;
 }
 
-#sharePop{
-display: none;
-	
+.likeValue {
+	background-color: #32aae1;
+	color: white !important;
+	padding-left: 5px;
+	border-radius: 2px;
+	box-shadow: 0 0 4px rgba(0, 0, 0, .20);
 }
 
+#sharePop {
+	display: none;
+}
 </style>
 
 
@@ -431,8 +430,8 @@ function sharePopup(addNewsId){
 
 
 	<div id="wrapper" class="wrapper">
-	
-		
+
+
 		<!-- <div id="sharePop" class="modal signin fade" role="dialog" aria-labelledby="signin" aria-hidden="true" style="margin: 0px !important; width: 400px;">
 			<div class="modal-dialog modal-sm" style="margin: 0px !important;">
 				<div class="modal-content">
@@ -472,29 +471,31 @@ function sharePopup(addNewsId){
 		</div>
 
 
-	<div id="s"></div>
-	
-	
-		<div id="sharePop" class="modal sharePop fade" tabindex="-1" role="dialog"
-			 aria-hidden="true">
+		<div id="s"></div>
+
+
+		<div id="sharePop" class="modal sharePop fade" tabindex="-1"
+			role="dialog" aria-hidden="true">
 			<div class="modal-dialog modal-sm">
-					 <div class="modal-content">
-					 
-					 
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal"
-								aria-hidden="true">&#42;</button>
-							<h3>Share News</h3>
-						</div>
-							<div class="modal-body" id="likeDiv">
-						<a id="shareNewsHyperLink"><span id="shareNewsLink" ></span></a>
-						
-						</div>
-						<div class="modal-footer">
-						<button id="copy-button" class="btn btn-submit" style="background-color: #32aae1; color: white;" onclick="copy_clip(shareNewsLink.innerHTML)">Copy</button>
-					
-					
-				<script  type="text/javascript">
+				<div class="modal-content">
+
+
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"
+							aria-hidden="true">&#42;</button>
+						<h3>Share News</h3>
+					</div>
+					<div class="modal-body" id="likeDiv">
+						<a id="shareNewsHyperLink"><span id="shareNewsLink"></span></a>
+
+					</div>
+					<div class="modal-footer">
+						<button id="copy-button" class="btn btn-submit"
+							style="background-color: #32aae1; color: white;"
+							onclick="copy_clip(shareNewsLink.innerHTML)">Copy</button>
+
+
+						<script type="text/javascript">
 				var copyBtn = document.querySelector('#copy-button');
 				copyBtn.addEventListener('click', function () {
 				  var urlField = document.querySelector('#shareNewsLink');
@@ -511,76 +512,78 @@ function sharePopup(addNewsId){
 				}, false);
 
 </script>
-					
-					
-					</div>
-					</div>
-				
-				
-				
-				
-			</div>
-		</div> 
 
-<!-- Header Page -->
+
+					</div>
+				</div>
+
+
+
+
+			</div>
+		</div>
+
+		<!-- Header Page -->
 		<jsp:include page="header.jsp"></jsp:include>
-		
-		
-		
-		
+
+
+
+
 		<div class="main-banner">
 			<div class="cp-featured-news-slider">
 				<div class="featured-slider">
-					
-<!-- Top News -->
+
+					<!-- Top News -->
 
 
-				<m:forEach items="${sessionScope.topls }" var="top" varStatus="j">
+					<m:forEach items="${sessionScope.topls }" var="top" varStatus="j">
 
-					
-					<m:set value="${top.addNewsId}" var="addNewsId" scope="session"></m:set>
-					<div class="item">
-						<div class="cp-post-content">
-							<div class="catname">
-								<a href="p=16.jsp" class="btn ripple-effect btn-gray manimate">Featured</a>
-							</div>
-							<h1>
-								<a href="<%=request.getContextPath()%>/UserPageNews?string=specific&addNewsId=${top.addNewsId }">${top.headLine}</a>
-							</h1>
-							<ul class="cp-post-tools">
-								<li>
-								
-								<a
-									href="http://crunchpress.com/demo/material_mag/?m=20150827"><i
-										class="icon-1"></i> ${ top.newsDate}</a></li>
-									<li class="likeValue">
-										<a id="anchor" class="ripple-effect" data-target=".signin" data-toggle="modal" ><span id="likeValue[${top.addNewsId}]" style="color: white;cursor: pointer;" onclick="onclickA(${top.addNewsId})"></span></a>
-										<button class="likebutton" id="likebutton[${top.addNewsId}]" onclick="likeButtonCall(${top.addNewsId},${param.userId})" >Like</button>
+
+						<m:set value="${top.addNewsId}" var="addNewsId" scope="session"></m:set>
+						<div class="item">
+							<div class="cp-post-content">
+								<div class="catname">
+									<a href="p=16.jsp" class="btn ripple-effect btn-gray manimate">Featured</a>
+								</div>
+								<h1>
+									<a
+										href="<%=request.getContextPath()%>/UserPageNews?string=specific&addNewsId=${top.addNewsId }">${top.headLine}</a>
+								</h1>
+								<ul class="cp-post-tools">
+									<li><a
+										href="http://crunchpress.com/demo/material_mag/?m=20150827"><i
+											class="icon-1"></i> ${ top.newsDate}</a></li>
+									<li class="likeValue"><a id="anchor" class="ripple-effect"
+										data-target=".signin" data-toggle="modal"><span
+											id="likeValue[${top.addNewsId}]"
+											style="color: white; cursor: pointer;"
+											onclick="onclickA(${top.addNewsId})"></span></a>
+										<button class="likebutton" id="likebutton[${top.addNewsId}]"
+											onclick="likeButtonCall(${top.addNewsId},${param.userId})">Like</button>
 									</li>
-									
-									<li>
-										<i class="icon-3"></i> 
-										<a id="anchor" class="ripple-effect" href="#sharePop" data-toggle="modal" onclick="sharePopup(${top.addNewsId})">Share</a>
-									</li>
-									
+
+									<li><i class="icon-3"></i> <a id="anchor"
+										class="ripple-effect" href="#sharePop" data-toggle="modal"
+										onclick="sharePopup(${top.addNewsId})">Share</a></li>
+
 									<li><i class="icon-4"></i> <a
-									href="http://crunchpress.com/demo/material_mag/?p=16#comments">
-										3 comments</a></li>
-							</ul>
+										href="http://crunchpress.com/demo/material_mag/?p=16#comments">
+											3 comments</a></li>
+								</ul>
+							</div>
+							<div class="cp-post-thumb">
+								<img width="1600" height="700"
+									src="../doc/${ top.addNewsId}.jpg"
+									class="attachment-1600x900 wp-post-image" alt="7" />
+							</div>
 						</div>
-						<div class="cp-post-thumb">
-							<img width="1600" height="700"
-								src="../doc/${ top.addNewsId}.jpg"
-								class="attachment-1600x900 wp-post-image" alt="7" />
-						</div>
-					</div>
-					<script >likeall(${top.addNewsId},${param.userId});</script>
-</m:forEach>
+						<script>likeall(${top.addNewsId},${param.userId});</script>
+					</m:forEach>
 
 
 
 
-<!-- End Top News -->
+					<!-- End Top News -->
 
 
 
@@ -600,165 +603,182 @@ function sharePopup(addNewsId){
 											class="post-46 page type-page status-publish hentry">
 											<a href="http://crunchpress.com/demo/material_mag/"> </a>
 											<div class="entry-content-cp">
-											
-																<div class="vc_row wpb_row vc_row-fluid">
-											<div class="cp-news-grid-style-2 m20">
-											<div class="col-md-12">
-																<div class="cp-fullwidth-news-post-excerpt">
-																	<div class="cp-thumb">
-																		<img style="height: 400px;!important ; "
-																			src="img/29-570x300.jpg"
-																			class="attachment-570x300 wp-post-image" alt="29" />
-																	</div>
-																	<div class="cp-post-content">
-																		<h3>
-																			<a
-																				href="http://crunchpress.com/demo/material_mag/?p=387">Sunlight
-																				and Photography Practices</a>
-																		</h3>
-																		<ul class="cp-post-tools">
-																			<li><a
-																				href="http://crunchpress.com/demo/material_mag/?m=20150917"><i
-																					class="icon-1"></i> Sep 17, 2015</a></li>
-																			<li><a class="ripple-effect" data-target=".signin" data-toggle="modal"><i class="fa fa-sign-in"></i></a></li>
-																			<li><i class="icon-3"></i><a
-																				href="http://crunchpress.com/demo/material_mag/?cat=11"
-																				title="Photography">Photography</a></li>
-																			<li><i class="icon-4"></i> <a
-																				href="http://crunchpress.com/demo/material_mag/?p=387#respond">
-																					0 Comment</a></li>
-																		</ul>
-																		<p>Lorem ipsum dolor sit amet, consectetur
-																			adipiscing elit. Morbi sagittis, sem quis lacinia
-																			faucibus, orci ipsum gravida tortor, vel interdum mi
-																			sapien ut justo. Nulla varius consequat magna, id...</p>
-																	</div>
+
+												<div class="vc_row wpb_row vc_row-fluid">
+													<div class="cp-news-grid-style-2 m20">
+														<div class="col-md-12">
+															<div class="cp-fullwidth-news-post-excerpt">
+																<div class="cp-thumb">
+																	<img style="height: 400px;!important ; "
+																		src="img/29-570x300.jpg"
+																		class="attachment-570x300 wp-post-image" alt="29" />
+																</div>
+																<div class="cp-post-content">
+																	<h3>
+																		<a
+																			href="http://crunchpress.com/demo/material_mag/?p=387">Sunlight
+																			and Photography Practices</a>
+																	</h3>
+																	<ul class="cp-post-tools">
+																		<li><a
+																			href="http://crunchpress.com/demo/material_mag/?m=20150917"><i
+																				class="icon-1"></i> Sep 17, 2015</a></li>
+																		<li><a class="ripple-effect"
+																			data-target=".signin" data-toggle="modal"><i
+																				class="fa fa-sign-in"></i></a></li>
+																		<li><i class="icon-3"></i><a
+																			href="http://crunchpress.com/demo/material_mag/?cat=11"
+																			title="Photography">Photography</a></li>
+																		<li><i class="icon-4"></i> <a
+																			href="http://crunchpress.com/demo/material_mag/?p=387#respond">
+																				0 Comment</a></li>
+																	</ul>
+																	<p>Lorem ipsum dolor sit amet, consectetur
+																		adipiscing elit. Morbi sagittis, sem quis lacinia
+																		faucibus, orci ipsum gravida tortor, vel interdum mi
+																		sapien ut justo. Nulla varius consequat magna, id...</p>
 																</div>
 															</div>
-															
-											
-											</div>
-											</div>
-											
-											
-											
-						
-											
-<!-- First-National grid -->											
-											<m:forEach items="${sessionScope.addnewsmap }" var="i">
-											<m:choose>
-												<m:when test="${not empty i.value }">
-												<div class="vc_row wpb_row vc_row-fluid">
-													<div class="cp-news-grid-style-1">
-													
-														<div style="padding-bottom: 40px;" class="section-title blue-border">
-															<h2><a  href="<%=request.getContextPath()%>/UserPageNews?categoryName=${i.key}&string=category">${i.key}</a></h2>
-															
 														</div>
-														<div id="blog_featured" class="row">
-															<ul id="myListfeature" class="myList grid">
-																
-																<m:forEach items="${i.value }" var="j" varStatus="forcount">
-															
-															<m:if test="${forcount.count lt 3 }">
-															
-																<li class="col-md-6" id="li">
-																
-																
-																
-																	<div class="cp-news-post-excerpt">
-																		<div class="cp-thumb">
-																			<div class="post_featured_image thumbnail_image">
-																				<img 
-																					src="../doc/${j.addNewsId }.jpg"
-																					class="attachment-360x280 wp-post-image" alt="8" />
-																			</div>
-																		</div>
-																		<div class="cp-post-content">
-																			<div class="catname">
-																				<a
-																					class="catname-btn btn-purple ripple-effect manimate"
-																					href="http://crunchpress.com/demo/material_mag/?cat=8"
-																					title="Business">${i.key}</a>
-																			</div>
-																			
-																			<h3>
-																				<a
-																					href="<%=request.getContextPath()%>/UserPageNews?string=specific&addNewsId=${j.addNewsId }">
-																					${j.headLine} </a>
-																			</h3>
-																			<ul class="cp-post-tools">
-																				<li><a
-																					href="http://crunchpress.com/demo/material_mag/?m=20150917"><i
-																						class="icon-1"></i> Sep 17, 2015</a></li>
-																				<li class="likeValue">
-																					<a class="ripple-effect" data-target=".signin" data-toggle="modal"><span id="likeValue[${j.addNewsId}]" style="color: white;cursor: pointer;"><m:set value="${j.addNewsId}" var="addNewsId"></m:set></span></a>
-																					<button  class="likebutton" id="likebutton[${j.addNewsId}]" onclick="likeButtonCall(${j.addNewsId},${param.userId})" >Like</button>
-																				</li>
-																				<li>
-																					<i class="icon-3"></i> 
-																					<a id="anchor" class="ripple-effect" href="#sharePop" data-toggle="modal" onclick="sharePopup(${j.addNewsId})">Share</a>
-																				</li>
-																				<li><i class="icon-4"></i> <a
-																					href="http://crunchpress.com/demo/material_mag/?p=421#comments">
-																						1 Comment</a></li>
-																			</ul>
-																		</div>
+
+
+													</div>
+												</div>
+
+
+
+
+
+												<!-- First-National grid -->
+												<m:forEach items="${sessionScope.addnewsmap }" var="i">
+													<m:choose>
+														<m:when test="${not empty i.value }">
+															<div class="vc_row wpb_row vc_row-fluid">
+																<div class="cp-news-grid-style-1">
+
+																	<div style="padding-bottom: 40px;"
+																		class="section-title blue-border">
+																		<h2>
+																			<a
+																				href="<%=request.getContextPath()%>/UserPageNews?categoryName=${i.key}&string=category">${i.key}</a>
+																		</h2>
+
 																	</div>
-																	
-																</li>
-																<script>likeall(${j.addNewsId},${param.userId});</script>
-															</m:if>	
-															</m:forEach>
-																</ul>
-															
-															<div class="numpost" data-number="2"></div>
-														</div>
-													</div>
-													<div class="wpb_column vc_column_container vc_col-sm-12">
-														<div class="wpb_wrapper"></div>
-													</div>
-												</div> 
-												</m:when>
-												</m:choose>
+																	<div id="blog_featured" class="row">
+																		<ul id="myListfeature" class="myList grid">
+
+																			<m:forEach items="${i.value }" var="j"
+																				varStatus="forcount">
+
+																				<m:if test="${forcount.count lt 3 }">
+
+																					<li class="col-md-6" id="li">
+
+
+
+																						<div class="cp-news-post-excerpt">
+																							<div class="cp-thumb">
+																								<div class="post_featured_image thumbnail_image">
+																									<img src="../doc/${j.addNewsId }.jpg"
+																										class="attachment-360x280 wp-post-image"
+																										alt="8" />
+																								</div>
+																							</div>
+																							<div class="cp-post-content">
+																								<div class="catname">
+																									<a
+																										class="catname-btn btn-purple ripple-effect manimate"
+																										href="http://crunchpress.com/demo/material_mag/?cat=8"
+																										title="Business">${i.key}</a>
+																								</div>
+
+																								<h3>
+																									<a
+																										href="<%=request.getContextPath()%>/UserPageNews?string=specific&addNewsId=${j.addNewsId }">
+																										${j.headLine} </a>
+																								</h3>
+																								<ul class="cp-post-tools">
+																									<li><a
+																										href="http://crunchpress.com/demo/material_mag/?m=20150917"><i
+																											class="icon-1"></i> Sep 17, 2015</a></li>
+																									<li class="likeValue"><a
+																										class="ripple-effect" data-target=".signin"
+																										data-toggle="modal"><span
+																											id="likeValue[${j.addNewsId}]"
+																											style="color: white; cursor: pointer;"><m:set
+																													value="${j.addNewsId}" var="addNewsId"></m:set></span></a>
+																										<button class="likebutton"
+																											id="likebutton[${j.addNewsId}]"
+																											onclick="likeButtonCall(${j.addNewsId},${param.userId})">Like</button>
+																									</li>
+																									<li><i class="icon-3"></i> <a id="anchor"
+																										class="ripple-effect" href="#sharePop"
+																										data-toggle="modal"
+																										onclick="sharePopup(${j.addNewsId})">Share</a>
+																									</li>
+																									<li><i class="icon-4"></i> <a
+																										href="http://crunchpress.com/demo/material_mag/?p=421#comments">
+																											1 Comment</a></li>
+																								</ul>
+																							</div>
+																						</div>
+
+																					</li>
+																					<script>likeall(${j.addNewsId},${param.userId});</script>
+																				</m:if>
+																			</m:forEach>
+																		</ul>
+
+																		<div class="numpost" data-number="2"></div>
+																	</div>
+																</div>
+																<div class="wpb_column vc_column_container vc_col-sm-12">
+																	<div class="wpb_wrapper"></div>
+																</div>
+															</div>
+														</m:when>
+													</m:choose>
 												</m:forEach>
-		<!--End-National First grid -->			
-	
-													
+												<!--End-National First grid -->
+
+
 											</div>
 										</div>
-		<!-- End Page-->										
+										<!-- End Page-->
 										<div class="comment-box"></div>
 									</div>
 								</div>
 							</div>
 						</div>
-						
+
 						<div id="block_second_right"
 							class="sidebar side-bar col-md-4 content_sidebar sidebar">
-							
-							
-<!-- Start Latest Post -->
+
+
+							<!-- Start Latest Post -->
+						
 						
 							<div
 								class="widget sidebar_section sidebar-recent-post latest_post">
 								<div class="widget latest-posts">
 									<h3>LATEST POSTS</h3>
 									<div class="cp-sidebar-content">
-										<ul class="small-grid">
-
+									<ul class="small-grid">
+									
+									<m:forEach items="${sessionScope.latestls }" var="latest" varStatus="j">
+									
+										
 											<li>
 												<div class="small-post">
 													<div class="cp-thumb">
 														<a href="http://crunchpress.com/demo/material_mag/?p=464"><img
-															width="80" height="80"
-															src="img/18-80x80.jpg"
+															width="120" height="80" src="../doc/${ latest.addNewsId}.jpg"
 															class="attachment-80x80 wp-post-image" alt="18" /></a>
 													</div>
 													<div class="cp-post-content">
 														<h3 class="border_none">
-															<a href="http://crunchpress.com/demo/material_mag/?p=464">
-																Crunch Games and Title Wi... </a>
+															<a href="<%=request.getContextPath()%>/UserPageNews?string=specific&addNewsId=${latest.addNewsId }">
+																${latest.headLine} </a>
 														</h3>
 														<ul class="cp-post-tools">
 															<li><i class="icon-1"></i>Sep 21, 2015</li>
@@ -772,69 +792,17 @@ function sharePopup(addNewsId){
 													</div>
 												</div>
 											</li>
-
-
-											<li>
-												<div class="small-post">
-													<div class="cp-thumb">
-														<a href="http://crunchpress.com/demo/material_mag/?p=421"><img
-															width="80" height="80"
-															src="img/8-80x80.jpg"
-															class="attachment-80x80 wp-post-image" alt="8" /></a>
-													</div>
-													<div class="cp-post-content">
-														<h3 class="border_none">
-															<a href="http://crunchpress.com/demo/material_mag/?p=421">
-																Business and Emerging Tyc... </a>
-														</h3>
-														<ul class="cp-post-tools">
-															<li><i class="icon-1"></i>Sep 17, 2015</li>
-															<li><i class="icon-3"></i> <a class="purple-text"
-																href="http://crunchpress.com/demo/material_mag/?p=421">
-																	Business </a></li>
-															<li><i class="icon-4"></i> <a
-																href="http://crunchpress.com/demo/material_mag/?p=421#comments">
-																	1 Comment</a></li>
-														</ul>
-													</div>
-												</div>
-											</li>
-
-
-											<li>
-												<div class="small-post">
-													<div class="cp-thumb">
-														<a href="http://crunchpress.com/demo/material_mag/?p=419"><img
-															width="80" height="80"
-															src="img/34-80x80.jpg"
-															class="attachment-80x80 wp-post-image" alt="34" /></a>
-													</div>
-													<div class="cp-post-content">
-														<h3 class="border_none">
-															<a href="http://crunchpress.com/demo/material_mag/?p=419">
-																Technology and Its Impact... </a>
-														</h3>
-														<ul class="cp-post-tools">
-															<li><i class="icon-1"></i>Sep 17, 2015</li>
-															<li><i class="icon-3"></i> <a class="purple-text"
-																href="http://crunchpress.com/demo/material_mag/?p=419">
-																	Technology </a></li>
-															<li><i class="icon-4"></i> <a
-																href="http://crunchpress.com/demo/material_mag/?p=419#comments">
-																	1 Comment</a></li>
-														</ul>
-													</div>
-												</div>
-											</li>
-
+										
+										
+										</m:forEach>
 										</ul>
 									</div>
 								</div>
 							</div>
-							
-			<!-- End Latest Post -->	
 
-<!-- Sing UP -->
+							<!-- End Latest Post -->
+
+							<!-- Sing UP -->
 							<div
 								class="widget sidebar_section sidebar-recent-post newsletter newsletter-box footer-box-1 sidebar-newsletter">
 								<h3>SIGN UP FOR NEWSLETTER</h3>
@@ -860,9 +828,9 @@ function sharePopup(addNewsId){
 								</div>
 
 							</div>
-			<!-- End Sing UP -->							
-							
-<!-- Most Comment -->
+							<!-- End Sing UP -->
+
+							<!-- Most Comment -->
 							<div
 								class="widget sidebar_section sidebar-recent-post most_commented">
 								<div class="widget most-commented">
@@ -891,9 +859,9 @@ function sharePopup(addNewsId){
 									</div>
 								</div>
 							</div>
-			<!-- End Most Comment -->			
-						
-<!-- Top Reporter -->	
+							<!-- End Most Comment -->
+
+							<!-- Top Reporter -->
 							<div
 								class="widget sidebar_section sidebar-recent-post all_authors">
 								<div class="widget top-authors">
@@ -903,88 +871,62 @@ function sharePopup(addNewsId){
 										<ul class="authors">
 											<li><a
 												href="http://crunchpress.com/demo/material_mag/?author=1"><img
-													src="img/110-80x80.jpg"
-													width="75" height="75" alt=""
+													src="img/110-80x80.jpg" width="75" height="75" alt=""
 													class="avatar avatar-75 wp-user-avatar wp-user-avatar-75 photo avatar-default" /></a></li>
 											<li><a
 												href="http://crunchpress.com/demo/material_mag/?author=9"><img
-													src="img/92-80x80.jpg"
-													width="75" height="75" alt="Alison Clark"
+													src="img/92-80x80.jpg" width="75" height="75"
+													alt="Alison Clark"
 													class="avatar avatar-75 wp-user-avatar wp-user-avatar-75 alignnone photo" /></a></li>
 											<li><a
 												href="http://crunchpress.com/demo/material_mag/?author=8"><img
-													src="img/82-80x80.jpg"
-													width="75" height="75" alt="Dolce Gabriel"
+													src="img/82-80x80.jpg" width="75" height="75"
+													alt="Dolce Gabriel"
 													class="avatar avatar-75 wp-user-avatar wp-user-avatar-75 alignnone photo" /></a></li>
 											<li><a
 												href="http://crunchpress.com/demo/material_mag/?author=7"><img
-													src="img/73-80x80.jpg"
-													width="75" height="75" alt="Ellie Austin"
+													src="img/73-80x80.jpg" width="75" height="75"
+													alt="Ellie Austin"
 													class="avatar avatar-75 wp-user-avatar wp-user-avatar-75 alignnone photo" /></a></li>
 											<li><a
 												href="http://crunchpress.com/demo/material_mag/?author=11"><img
-													src="img/110-80x80.jpg"
-													width="75" height="75" alt=""
+													src="img/110-80x80.jpg" width="75" height="75" alt=""
 													class="avatar avatar-75 wp-user-avatar wp-user-avatar-75 photo avatar-default" /></a></li>
 											<li><a
 												href="http://crunchpress.com/demo/material_mag/?author=5"><img
-													src="img/52-80x80.jpg"
-													width="75" height="75" alt="Nellie Brian"
+													src="img/52-80x80.jpg" width="75" height="75"
+													alt="Nellie Brian"
 													class="avatar avatar-75 wp-user-avatar wp-user-avatar-75 alignnone photo" /></a></li>
 											<li><a
 												href="http://crunchpress.com/demo/material_mag/?author=4"><img
-													src="img/42-80x80.jpg"
-													width="75" height="75" alt="Nelson Patrick"
+													src="img/42-80x80.jpg" width="75" height="75"
+													alt="Nelson Patrick"
 													class="avatar avatar-75 wp-user-avatar wp-user-avatar-75 alignnone photo" /></a></li>
 											<li><a
 												href="http://crunchpress.com/demo/material_mag/?author=6"><img
-													src="img/62-80x80.jpg"
-													width="75" height="75" alt="Ricardo Bill"
+													src="img/62-80x80.jpg" width="75" height="75"
+													alt="Ricardo Bill"
 													class="avatar avatar-75 wp-user-avatar wp-user-avatar-75 alignnone photo" /></a></li>
 										</ul>
 									</div>
 
 								</div>
 							</div>
-			<!--End Top Reporter -->
-<!-- Categories -->
+							<!--End Top Reporter -->
+							<!-- Categories -->
 							<div
 								class="widget sidebar_section sidebar-recent-post widget_categories">
 								<h3>CATEGORIES</h3>
 								<ul>
+								<m:forEach items="${sessionScope.categoryls }" var="categoryls" varStatus="j">
+								
 									<li class="cat-item cat-item-8"><a
-										href="http://crunchpress.com/demo/material_mag/?cat=8">Business</a>
+										href="http://crunchpress.com/demo/material_mag/?cat=8">${categoryls.categoryName}</a>
 										(4)</li>
-									<li class="cat-item cat-item-9"><a
-										href="http://crunchpress.com/demo/material_mag/?cat=9">Fashion</a>
-										(5)</li>
-									<li class="cat-item cat-item-44"><a
-										href="http://crunchpress.com/demo/material_mag/?cat=44">Featured</a>
-										(4)</li>
-									<li class="cat-item cat-item-6"><a
-										href="http://crunchpress.com/demo/material_mag/?cat=6">LifeStyle</a>
-										(3)</li>
-									<li class="cat-item cat-item-12"><a
-										href="http://crunchpress.com/demo/material_mag/?cat=12">Magazine</a>
-										(3)</li>
-									<li class="cat-item cat-item-11"><a
-										href="http://crunchpress.com/demo/material_mag/?cat=11">Photography</a>
-										(7)</li>
-									<li class="cat-item cat-item-10"><a
-										href="http://crunchpress.com/demo/material_mag/?cat=10">Sports</a>
-										(5)</li>
-									<li class="cat-item cat-item-7"><a
-										href="http://crunchpress.com/demo/material_mag/?cat=7">Technology</a>
-										(1)</li>
-									<li class="cat-item cat-item-39"><a
-										href="http://crunchpress.com/demo/material_mag/?cat=39">Travel</a>
-										(4)</li>
-									<li class="cat-item cat-item-1"><a
-										href="http://crunchpress.com/demo/material_mag/?cat=1">Uncategorized</a>
-										(1)</li>
-								</ul>
+										</m:forEach>
+									</ul>
 							</div>
-			<!-- End Categories -->						
+							<!-- End Categories -->
 							<div
 								class="widget sidebar_section sidebar-recent-post facebook_class">
 								<h3>FACEBOOK</h3>

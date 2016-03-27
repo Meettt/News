@@ -1,10 +1,26 @@
 package VO;
 
+import org.json.simple.JSONObject;
+
 public class Sub_categoryVO {
 	private int sub_categoryId;
 	private String sub_categoryName;
 	private String sub_categoryDes;
 	private CategoryVO categoryVO;
+	private JSONObject jsonObject = new JSONObject();
+
+	
+	public JSONObject getJsonObject() {
+		jsonObject.put("sub_categoryId", sub_categoryId);
+		jsonObject.put("sub_categoryName", sub_categoryName);
+		
+		return jsonObject;
+	}
+	public void setJsonObject(JSONObject jsonObject) {
+		this.jsonObject = jsonObject;
+	}
+	
+
 	
 	
 	public int getSub_categoryId() {

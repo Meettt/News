@@ -32,7 +32,7 @@ public class AdminDAO {
 
 			Session session = sessionFactory.openSession();
 			Transaction tr = session.beginTransaction();
-			Query w = session.createQuery("from AdminVO where adminUserName='"+ v.getAdminUserName() + "'and adminPwd='"+v.getAdminPwd() + "'");
+			Query w = session.createQuery("from AdminVO where adminEmail='"+ v.getAdminEmail() + "'and adminPwd='"+v.getAdminPwd() + "'");
 			l = w.list();
 			tr.commit();
 		} catch (Exception z) {

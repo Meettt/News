@@ -102,7 +102,6 @@ img.wp-smiley, img.emoji {
 	href='css/font-awesome.css?ver=2.0.3' type='text/css' media='all' />
 <link rel='stylesheet' id='jquery-ui-smoothness-css'
 	href='css/jquery-ui.min.css?ver=1.10.3' type='text/css' media='screen' />
-<script type='text/javascript' src='js/jquery.js?ver=1.11.3'></script>
 <script type='text/javascript' src='js/jquery-migrate.min.js?ver=1.2.1'></script>
 <script type='text/javascript' src='js/tie.js?ver=4.3.1'></script>
 <script type='text/javascript'>
@@ -459,7 +458,7 @@ var taqyeem = {"ajaxurl":"http://crunchpress.com/demo/material_mag/wp-admin/admi
 
 															<h3>
 																<a
-																	href="<%=request.getContextPath()%>/UserPageNews?string=specific&addNewsId=${pageScope.addNewsId}">
+																	href="<%=request.getContextPath()%>/UserPageNews?string=specific&addNewsId=${pageScope.top}">
 																	${pageScope.headLine } </a>
 															</h3>
 															<ul class="cp-post-tools">
@@ -596,20 +595,22 @@ var taqyeem = {"ajaxurl":"http://crunchpress.com/demo/material_mag/wp-admin/admi
 								<div class="widget latest-posts">
 									<h3>LATEST POSTS</h3>
 									<div class="cp-sidebar-content">
-										<ul class="small-grid">
-
+									<ul class="small-grid">
+									
+									<m:forEach items="${sessionScope.latestls }" var="latest" varStatus="j">
+									
+										
 											<li>
 												<div class="small-post">
 													<div class="cp-thumb">
 														<a href="http://crunchpress.com/demo/material_mag/?p=464"><img
-															width="80" height="80"
-															src="http://crunchpress.com/demo/material_mag/wp-content/uploads/2015/09/18-80x80.jpg"
+															width="120" height="80" src="../doc/${ latest.addNewsId}.jpg"
 															class="attachment-80x80 wp-post-image" alt="18" /></a>
 													</div>
 													<div class="cp-post-content">
 														<h3 class="border_none">
-															<a href="http://crunchpress.com/demo/material_mag/?p=464">
-																Crunch Games and Title Wi... </a>
+															<a href="<%=request.getContextPath()%>/UserPageNews?string=specific&addNewsId=${latest.addNewsId }">
+																${latest.headLine} </a>
 														</h3>
 														<ul class="cp-post-tools">
 															<li><i class="icon-1"></i>Sep 21, 2015</li>
@@ -623,61 +624,9 @@ var taqyeem = {"ajaxurl":"http://crunchpress.com/demo/material_mag/wp-admin/admi
 													</div>
 												</div>
 											</li>
-
-
-											<li>
-												<div class="small-post">
-													<div class="cp-thumb">
-														<a href="http://crunchpress.com/demo/material_mag/?p=421"><img
-															width="80" height="80"
-															src="http://crunchpress.com/demo/material_mag/wp-content/uploads/2015/09/8-80x80.jpg"
-															class="attachment-80x80 wp-post-image" alt="8" /></a>
-													</div>
-													<div class="cp-post-content">
-														<h3 class="border_none">
-															<a href="http://crunchpress.com/demo/material_mag/?p=421">
-																Business and Emerging Tyc... </a>
-														</h3>
-														<ul class="cp-post-tools">
-															<li><i class="icon-1"></i>Sep 17, 2015</li>
-															<li><i class="icon-3"></i> <a class="purple-text"
-																href="http://crunchpress.com/demo/material_mag/?p=421">
-																	Business </a></li>
-															<li><i class="icon-4"></i> <a
-																href="http://crunchpress.com/demo/material_mag/?p=421#comments">
-																	1 Comment</a></li>
-														</ul>
-													</div>
-												</div>
-											</li>
-
-
-											<li>
-												<div class="small-post">
-													<div class="cp-thumb">
-														<a href="http://crunchpress.com/demo/material_mag/?p=419"><img
-															width="80" height="80"
-															src="http://crunchpress.com/demo/material_mag/wp-content/uploads/2015/08/34-80x80.jpg"
-															class="attachment-80x80 wp-post-image" alt="34" /></a>
-													</div>
-													<div class="cp-post-content">
-														<h3 class="border_none">
-															<a href="http://crunchpress.com/demo/material_mag/?p=419">
-																Technology and Its Impact... </a>
-														</h3>
-														<ul class="cp-post-tools">
-															<li><i class="icon-1"></i>Sep 17, 2015</li>
-															<li><i class="icon-3"></i> <a class="purple-text"
-																href="http://crunchpress.com/demo/material_mag/?p=419">
-																	Technology </a></li>
-															<li><i class="icon-4"></i> <a
-																href="http://crunchpress.com/demo/material_mag/?p=419#comments">
-																	1 Comment</a></li>
-														</ul>
-													</div>
-												</div>
-											</li>
-
+										
+										
+										</m:forEach>
 										</ul>
 									</div>
 								</div>

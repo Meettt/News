@@ -79,4 +79,23 @@ public void update(AreaVO vo){
 		z.printStackTrace();
 	}
 }
+@SuppressWarnings("unchecked")
+public List<AreaVO> ajaxArea(AreaVO v) {
+	List<AreaVO> l = null;
+	try {
+		SessionFactory sessionFactory = new Configuration().configure()
+				.buildSessionFactory();
+
+		Session session = sessionFactory.openSession();
+		Transaction tr = session.beginTransaction();
+		Query w = session.createQuery("from AreaVO where cityId='"+ v.getCityVO().getCityId() + "' ");
+		l = w.list();
+
+		tr.commit();
+	} catch (Exception z) {
+		z.printStackTrace();
+	}
+	return l;
+}
+
 }

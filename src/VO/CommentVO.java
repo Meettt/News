@@ -14,6 +14,7 @@ public class CommentVO {
 		
 		jsonObject.put("commentId", commentId);
 		jsonObject.put("comment", comment);
+	jsonObject.put("firstName",userVO.getFirstName());
 		return jsonObject;
 	}
 

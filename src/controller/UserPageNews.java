@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import bigData.NewsLogger;
 import ADO.AddNewsDAO;
 import ADO.CategoryDAO;
 import VO.AddNewsVO;
@@ -49,21 +50,28 @@ public class UserPageNews extends HttpServlet {
 		if (string.equals("category")) {
 			String categoryName = request.getParameter("categoryName");
 			CategoryVO categoryVO = new CategoryVO();
+			CategoryDAO categoryDAO= new CategoryDAO();
 			categoryVO.setCategoryName(categoryName);
 			addNewsVO.setCategoryVO(categoryVO);
 			List<AddNewsVO> specifcategoryls = addNewsDAO
 					.searchSpecifCategoryNews(addNewsVO);
 			session.setAttribute("specifcategoryls", specifcategoryls);
-			response.sendRedirect("User/specificCategory.jsp?userId=2");
+			List<CategoryVO> categoryls = categoryDAO.search(null);
+			session.setAttribute("categoryls", categoryls);
+			NewsLogger.INFO(request,"userId= open categoryName="+categoryName);
+			response.sendRedirect("User/specificCategory.jsp?userId=1");
+			
 		}
 		if (string.equals("user")) {
 
 			List<AddNewsVO> topls = addNewsDAO.searchtop(null);
-
 			session.setAttribute("topls", topls);
-
+			List<AddNewsVO> latestls = addNewsDAO.searchlatest(null);
+			session.setAttribute("latestls", latestls);
 			CategoryDAO categoryDAO = new CategoryDAO();
 			List<CategoryVO> categoryls = categoryDAO.search(null);
+			session.setAttribute("categoryls", categoryls);
+
 			List<AddNewsVO> addnewsls = addNewsDAO.searchAllNews(null);
 			Map<String, List<AddNewsVO>> mp = new HashMap<String, List<AddNewsVO>>();
 			Iterator<CategoryVO> iterator = categoryls.iterator();
@@ -83,7 +91,7 @@ public class UserPageNews extends HttpServlet {
 				mp.put(categoryVO.getCategoryName(), ls);
 			}
 			session.setAttribute("addnewsmap", mp);
-			response.sendRedirect("User/userIndex.jsp?userId=2");
+			response.sendRedirect("User/userIndex.jsp?userId=1");
 		}
 		if (string.equals("specific")) {
 			Integer addNewsId = Integer.parseInt(request
@@ -91,7 +99,12 @@ public class UserPageNews extends HttpServlet {
 			addNewsVO.setAddNewsId(addNewsId);
 			List<AddNewsVO> addnewsls = addNewsDAO.searchSpecific(addNewsVO);
 			session.setAttribute("addnewsls", addnewsls);
-			response.sendRedirect("User/specificNews.jsp?addNewsId="+addNewsId+"&userId=2");
+			CategoryDAO categoryDAO= new CategoryDAO();
+			
+			List<CategoryVO> categoryls = categoryDAO.search(null);
+			session.setAttribute("categoryls", categoryls);
+			NewsLogger.INFO(request,"userId= open addnewsId="+addNewsId);
+			response.sendRedirect("User/specificNews.jsp?addNewsId="+addNewsId+"&userId=1");
 		}
 	}
 

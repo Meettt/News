@@ -31,7 +31,7 @@ public class ReporterRegistrationDAO {
 					.buildSessionFactory();
 			Session session = sessionFactory.openSession();
 			Transaction tr = session.beginTransaction();
-			Query w = session.createQuery("from ReporterRegistrationVO");
+			Query w = session.createQuery("from ReporterRegistrationVO where email='"+ reporterRegistrationVO.getEmail() + "'and password='"+reporterRegistrationVO.getPassword() + "'");
 			l = w.list();
 
 			tr.commit();

@@ -57,9 +57,9 @@
 				<div class="panel-body">
 					<form action="<%=request.getContextPath() %>/SignIn" method="post">
 						<div class="form-group mb-lg">
-							<label>Username</label>
+							<label>E-mail Id</label>
 							<div class="input-group input-group-icon">
-								<input name="adminUserName" type="text"
+								<input name="email" type="text"
 									class="form-control input-lg" /> <span
 									class="input-group-addon"> <span class="icon icon-lg">
 										<i class="fa fa-user"></i>
@@ -75,7 +75,7 @@
 									Password?</a>
 							</div>
 							<div class="input-group input-group-icon">
-								<input name="adminPwd" type="password"
+								<input name="pwd" type="password"
 									class="form-control input-lg" /> <span
 									class="input-group-addon"> <span class="icon icon-lg">
 										<i class="fa fa-lock"></i>
@@ -84,6 +84,15 @@
 							</div>
 						</div>
 
+                            <div class="form-group mb-lg">
+								<label> Type </label><br>
+								
+								<input type="radio" name="r" value="user">User
+								<input type="radio" name="r" value="reporter">Reporter	
+							</div>
+							
+
+
 						<div class="row">
 							<div class="col-sm-8">
 								<div class="checkbox-custom checkbox-default">
@@ -91,6 +100,9 @@
 										for="RememberMe">Remember Me</label>
 								</div>
 							</div>
+							
+							
+							
 							<div class="col-sm-4 text-right">
 								<button type="submit" class="btn btn-primary hidden-xs">Sign
 									In</button>
@@ -123,7 +135,7 @@
 						<p class="text-center">
 							Don't have an account yet? <a href="pages-signup.jsp">Sign
 								Up!</a>
-					</form>
+													</form>
 				</div>
 			</div>
 

@@ -18,7 +18,7 @@ import javax.servlet.http.HttpSession;
 import ADO.LoginDAO;
 import VO.LoginVO;
 
-@WebFilter("/jkil")
+@WebFilter("/aaaa")
 public class LoginFilter implements Filter {
 	public LoginFilter() {
 	}
@@ -34,7 +34,7 @@ public class LoginFilter implements Filter {
 		String uri = ((HttpServletRequest)request).getRequestURI();
 		System.out.println("URI :: "+uri);
 		
-		if(uri.contains("SignUp") ||uri.contains("UserPageNews") ||uri.contains("HeaderController") || uri.contains("userIndex")||uri.contains("reporterRegistration")|| (uri.contains("pages-signup")||(uri.contains("/assets"))||uri.contains("/css")) || uri.contains("/js") && !uri.contains(".jsp") || uri.contains("/img")|| uri.contains("/fonts"))
+		if(uri.contains("SignUp") ||uri.contains("UserPageNews") ||uri.contains("HeaderController") || uri.contains("userIndex")||uri.contains("userRegistration")||uri.contains("reporterRegistration")|| (uri.contains("pages-signup")||(uri.contains("/User"))||(uri.contains("/assets"))||uri.contains("/css")) || uri.contains("/js") && !uri.contains(".jsp") || uri.contains("/img")|| uri.contains("/fonts"))
 		{
 			System.err.println("URI :: "+uri);
 			chain.doFilter(request,response);

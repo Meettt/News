@@ -46,6 +46,44 @@
 <link rel="stylesheet" href="css/color2.css" />
 
 <link rel="stylesheet" href="css/colorpicker.css">
+<script>
+					function state(){
+						var xreq = new XMLHttpRequest(); 
+						var i;
+						var country = document.getElementById("countryId");
+						
+						 xreq.onreadystatechange = function () {
+							 if(xreq.readyState ==4){
+								 allremoveState(); 
+								var obj= JSON.parse(xreq.responseText);
+								for( i =0 ;i<obj.length;i++){
+									var optiondiv= document.createElement("option");
+									optiondiv.value=obj[i].stateId;
+									optiondiv.text=obj[i].stateName;
+									document.form.stateId.options.add(optiondiv);
+									
+								}
+							
+								 
+							 }
+							
+						}
+						xreq.open("GET","${pageContext.request.contextPath}/AjaxScript?string=state&countryId="+country.value,true);
+						xreq.send();
+						
+					}
+					
+					
+					
+					
+	function allremoveState() {
+		var stateId = document.getElementById("stateId");
+		for (var i = stateId.length; i >= 1; i--) {
+			document.form.stateId.options.remove(i);
+		}
+	}
+	</script>
+
 </head>
 <body>
 	<section class="body">
@@ -74,7 +112,7 @@
 
 						<!-- City -->
 						<form id="form" class="form-horizontal form-bordered" method="post"
-							action="<%=request.getContextPath()%>/City">
+							action="<%=request.getContextPath()%>/City" name="form">
 							<section class="panel">
 								<header class="panel-heading">
 									<div class="panel-actions">
@@ -93,23 +131,28 @@
 											<label class="col-md-3 control-label" for="inputSuccess">Country</label>
 											<div class="col-md-6">
 
-												<select class="form-control mb-md" name="countryId">
-													<m:forEach items="${sessionScope.countryls}" var="i">
-														<option value="${i.countryId}">${i.countryName}</option>
-													</m:forEach>
-												</select>
-											</div>
+											<select class="form-control mb-md" name="countryId"
+												id="countryId" onchange="state()">
+												<option selected="selected">Select One</option>
+												<m:forEach items="${sessionScope.countryls}" var="i">
+													<option value="${i.countryId}">${i.countryName}</option>
+												</m:forEach>
+											</select>
+
 										</div>
+																					</div>
 										
 										<div class="form-group">
 											<label class="col-md-3 control-label" for="inputSuccess">State</label>
 											<div class="col-md-6">
-												<select class="form-control mb-md" name="stateId">
-													<m:forEach items="${sessionScope.statels}" var="i">
-														<option value="${i.stateId}">${i.stateName}</option>
-													</m:forEach>
-												</select>
-											</div>
+
+											<select class="form-control mb-md" name="stateId"
+												id="stateId"   onchange="city()">
+											<option selected="selected">Select One</option>
+											</select>
+
+										</div>
+											
 										</div>
 										</div>
 										<div class="form-group">

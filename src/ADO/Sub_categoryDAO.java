@@ -83,6 +83,25 @@ public class Sub_categoryDAO {
 			z.printStackTrace();
 		}
 	}
+	@SuppressWarnings("unchecked")
+	public List<Sub_categoryVO> ajaxSub_category(Sub_categoryVO v) {
+		List<Sub_categoryVO> l = null;
+		try {
+			SessionFactory sessionFactory = new Configuration().configure()
+					.buildSessionFactory();
+
+			Session session = sessionFactory.openSession();
+			Transaction tr = session.beginTransaction();
+			Query w = session.createQuery("from Sub_categoryVO where categoryId='"+ v.getCategoryVO().getCategoryId() + "' ");
+			l = w.list();
+
+			tr.commit();
+		} catch (Exception z) {
+			z.printStackTrace();
+		}
+		return l;
+	}
+
 
 
 }
